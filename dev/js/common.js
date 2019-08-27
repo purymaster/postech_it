@@ -72,12 +72,12 @@ $(function() {
 
     $('.main_visual [slide]').slick({
         fade: true,
+        // cssEase: 'cubic-bezier(.43,-0.22,.14,1)'
         speed: 1000,
         autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: false,
         pauseOnFocus: false,
-        // cssEase: 'cubic-bezier(.43,-0.22,.14,1)'
     }).on('beforeChange', function(event, slick, direction) {
         $('.main_visual').find('.progress').removeClass('on');
     }).on('afterChange', function(event, slick, direction) {
@@ -91,6 +91,9 @@ $(function() {
     $('section.notice [slide]').slick({
         dots: true,
         arrows: false,
+        autoplay: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
     });
 
     /******************** 스크롤 애니메이션 정의 ********************/
