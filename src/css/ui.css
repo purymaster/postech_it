@@ -80,7 +80,7 @@ html {font-size:1em; letter-spacing:-0.04em;}
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,button {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; margin:0; padding:0; border:0; font-family:"Noto Sans KR",Dotum,"돋움",Helvetica,"Apple SD Gothic Neo",sans-serif; font-size:100%; vertical-align:baseline; -o-box-sizing:border-box; -ms-box-sizing:border-box;}
 
 input[type="text"],input[type="email"],input[type="number"],input[type="submit"],input[type="reset"],input[type="tel"],input[type="password"],input[type="url"],input[type="search"],input[type="file"],button,textarea {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; margin:0; padding:0; border:none; border-radius:0; background:none; font-family:"Noto Sans KR",Dotum,"돋움",Helvetica,"Apple SD Gothic Neo",sans-serif; font-size:100%; letter-spacing:-0.04em; -webkit-appearance:none; -moz-appearance:none; -ms-appearance:none; -o-appearance:none; -webkit-border-radius:0; -moz-border-radius:0; -o-box-sizing:border-box;}
-body {position:relative; background:#fff; font-size:14px; line-height:1.8; color:#4c5358; word-wrap:break-word; word-break:keep-all; -webkit-text-size-adjust:none; -moz-text-size-adjust:none;}
+body {position:relative; background:#fff; font-size:14px; line-height:1.8; color:#333; word-wrap:break-word; word-break:keep-all; -webkit-text-size-adjust:none; -moz-text-size-adjust:none;}
 blockquote,q {quotes:none;}
 /* input:focus,button:focus {border:none;} */
 table {border-spacing:0; border-collapse:collapse;}
@@ -242,7 +242,7 @@ header .search button.on + input[type="text"] {transform:scaleX(1);}
 	header nav .menu > li:after {transform:rotate(90deg); transition:all 0.3s;}
 	header nav .menu > li.on:after {transform:rotate(0);}
 
-	header nav .sub-menu {display:none; visibility:visible; position:static; width:auto; margin:0; margin-bottom:10px; padding:0 10px; background:#f3f1ee; transform:none !important; transition:none !important; opacity:1;}
+	header nav .sub-menu {display:none; visibility:visible; position:static; width:auto; margin:0; margin-bottom:10px; padding:5px 10px; background:#f3f1ee; transform:none !important; transition:none !important; opacity:1;}
 	header nav .sub-menu li a {padding:5px 0; font-size:14px; font-weight:400; line-height:1.5em;}
 	header nav .sub-menu li a:after {display:none;}
 	header nav .sub-menu li a:hover {font-weight:400;}
@@ -446,11 +446,12 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 }
 
 /* 세미나 */
-.main_page .seminar {padding:45px 0 50px; background:#f3f1ee; text-align:center;}
-.main_page .seminar .sub_txt {margin-top:5px; font-size:18px; line-height:1.5em;}
-.main_page .seminar .list_wrap {position:relative; padding-top:60px;}
+.main_page .seminar {padding:80px 0 50px; background:#f3f1ee;}
+.main_page .seminar .list_wrap {position:relative;}
 .main_page .seminar .list_wrap:after {display:block; clear:both; content:"";}
-.main_page .seminar .list_wrap img {float:left; width:356px; margin-right:16px;}
+.main_page .seminar .list_wrap .tit_wrap {float:left; width:356px; height:415px; margin-right:16px; padding:25px 30px; background:url(../img/bg/bg_seminar_tit.png); background-position:center; color:#fff;}
+.main_page .seminar .list_wrap .tit_wrap h2 {margin:0;}
+.main_page .seminar .list_wrap .tit_wrap .sub_txt {margin-top:18px; font-size:14px; line-height:1.85em;}
 .main_page .seminar .list_wrap ul {overflow:hidden; float:left; width:calc(100% - 356px); margin:-8px;}
 .main_page .seminar .list_wrap ul li {float:left; width:50%; padding:8px; font-weight:700; text-align:left;}
 .main_page .seminar .list_wrap ul li a {display:block; position:relative; width:100%; height:200px; padding:50px 30px 20px; background:#fff;}
@@ -459,22 +460,23 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 .main_page .seminar .list_wrap ul li .date {font-family:"Open Sans"; font-size:16px; font-weight:700; color:#999;}
 .main_page .seminar .list_wrap ul li .tit {overflow:hidden; height:3.9em; margin-top:5px; font-family:"Open Sans"; font-size:24px; line-height:1.3em; color:#333; transition:all 0.3s;}
 .main_page .seminar .list_wrap ul li a:hover .tit {color:#ca0464;}
-.main_page .seminar .list_wrap .more {position:absolute; top:20px; right:0;}
+.main_page .seminar .list_wrap .more {position:absolute; top:-35px; right:0;}
 
 @media (max-width:1024px) {
 	.main_page .seminar {padding:30px 0;}
-	.main_page .seminar .sub_txt {margin:0; font-size:16px;}
-	.main_page .seminar .list_wrap {padding-top:30px;}
-	.main_page .seminar .list_wrap img {display:none;}
+	.main_page .seminar .list_wrap .tit_wrap {float:none; width:auto; height:auto; margin:0; margin-bottom:15px; padding:0; background:none; color:#333;}
+	.main_page .seminar .list_wrap .tit_wrap .sub_txt {margin:0;}
+	.main_page .seminar .list_wrap .tit_wrap .sub_txt br {display:none;}
 	.main_page .seminar .list_wrap ul {float:none; width:calc(100% + 16px);}
-	.main_page .seminar .list_wrap ul li a {height:160px; padding:25px 15px;}
+	.main_page .seminar .list_wrap ul li a {height:140px; padding:15px;}
 	.main_page .seminar .list_wrap ul li .date {font-size:14px;}
 	.main_page .seminar .list_wrap ul li .tit {font-size:20px;}
-	.main_page .seminar .list_wrap .more {top:0;}
+	.main_page .seminar .list_wrap .more {top:5px;}
 }
 
 @media (max-width:599px) {
 	.main_page .seminar .sub_txt {font-size:14px;}
+	.main_page .seminar .list_wrap .tit_wrap .sub_txt {font-size:12px;}
 	.main_page .seminar .list_wrap ul li {width:100%;}
 	.main_page .seminar .list_wrap ul li a {height:auto; padding:15px;}
 	.main_page .seminar .list_wrap ul li .date {font-size:12px;}
