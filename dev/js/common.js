@@ -70,7 +70,7 @@ $(function() {
 
     $('.main_visual').find('.progress').addClass('on');
 
-    $('.main_visual [slide]').slick({
+    $('.main_visual [data-slide]').slick({
         fade: true,
         // cssEase: 'cubic-bezier(.43,-0.22,.14,1)'
         speed: 1000,
@@ -88,7 +88,7 @@ $(function() {
     total_slide.text($('.main_visual .slide').not('.slick-cloned').length);
 
     /* 메인페이지 공지사항 슬라이드 */
-    $('section.notice [slide]').slick({
+    $('section.notice [data-slide]').slick({
         dots: true,
         arrows: false,
         autoplay: true,

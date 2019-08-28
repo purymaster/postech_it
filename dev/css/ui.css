@@ -145,6 +145,21 @@ html {overflow-y:scroll; -webkit-font-smoothing:antialiased; -moz-osx-font-smoot
 	.container {padding:0 15px;}
 }
 
+/* 탭메뉴 */
+.tab_menu {margin-bottom:50px;}
+.tab_menu ul {overflow:hidden; border-left:1px solid #e8e5e2; background:#f9f7f5;}
+.tab_menu ul li {float:left;}
+.tab_menu ul.type2 li {width:50%;}
+.tab_menu ul.type3 li {width:33.33%;}
+.tab_menu ul.type4 li {width:25%;}
+.tab_menu ul.type5 li {width:20%;}
+.tab_menu ul li a {display:table; overflow:hidden; width:100%; padding:0 5px; border:1px solid #e8e5e2; border-right:0; text-align:center; -webkit-transition:all 0.3s; transition:all 0.3s; table-layout:fixed;}
+.tab_menu ul li.on a,
+.tab_menu ul li a:hover {background:#fff; border-color:red; border-bottom-color:#fff;}
+.tab_menu ul li.on a:before,
+.tab_menu ul li a:hover:before {}
+.tab_menu ul li a span {display:table-cell; overflow:hidden; height:60px; font-size:16px; line-height:1.5em; vertical-align:middle;}
+
 /*=========================================================
 4. Slick
 =========================================================*/
