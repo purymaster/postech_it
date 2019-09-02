@@ -119,7 +119,7 @@ gulp.task('sync', ['html'], () => {
 		port: 8080,
 		server: {
 			baseDir: './',
-			index: 'index.html'
+			index: 'map_list.html'
 
 		},
 		browser: ['google chrome', 'chrome']
