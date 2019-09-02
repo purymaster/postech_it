@@ -62,6 +62,24 @@ $(function () {
 		$('nav .menu > li').removeClass('on').find('.sub-menu').slideUp(100);
 	});
 
+	/******************** 셀렉트박스 제어 ********************/
+
+	var select_form = $('.select_form');
+
+	select_form.on('click', 'button[type="button"]', function () {
+		($(this).hasClass('on')) ?
+			select_form.find('button').removeClass('on') :
+			(select_form.find('button').removeClass('on'), $(this).addClass('on'));
+	}).on('click', 'a', function () {
+		$(this).closest('ul').siblings('button').removeClass('on').find('span').html($(this).text());
+		$(this).closest('.select_form').find('input[type=hidden]').val($(this).attr('value'));
+	});
+
+	$(document).on('mouseup touchend', function (e) {
+		if (!select_form.is(e.target) && select_form.has(e.target).length === 0)
+			select_form.find('button').removeClass('on');
+	});
+
 	/******************** 슬라이드 제어 ********************/
 
 	/* 메인페이지 메인비쥬얼 슬라이드 */
