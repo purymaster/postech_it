@@ -10,12 +10,12 @@ $(function() {
             (
                 is_mobile = false,
                 $('header .menu_wrap').removeClass('on'),
-                $('nav .menu > li').removeClass('on'),
+                $('nav .main-menu li').removeClass('on'),
                 $('header nav .sub-menu').show()
             ) : (
                 is_mobile = true,
                 $('header .menu_wrap').removeClass('on'),
-                $('nav .menu > li').removeClass('on').find('.sub-menu').hide()
+                $('nav .main-menu li').removeClass('on').find('.sub-menu').hide()
             )
     });
 
@@ -44,12 +44,12 @@ $(function() {
     });
 
     /* 모바일 메뉴 펼치기 */
-    $('nav .menu > li > a').on('click', (function() {
+    $('nav .main-menu > li > a').on('click', (function() {
         if (is_mobile) {
             $(this).parent().hasClass('on') ?
-                $('nav .menu > li').removeClass('on').find('.sub-menu').stop().slideUp(100) :
+                $('nav .main-menu li').removeClass('on').find('.sub-menu').stop().slideUp(100) :
                 (
-                    $('nav .menu > li').removeClass('on').find('.sub-menu').stop().slideUp(100),
+                    $('nav .main-menu li').removeClass('on').find('.sub-menu').stop().slideUp(100),
                     $(this).parent().addClass('on').find('.sub-menu').stop().slideDown(100)
                 )
             return false;
@@ -59,7 +59,7 @@ $(function() {
     /* 모바일 메뉴 닫기 */
     $('header .close_menu').on('click', function() {
         $('header .menu_wrap').removeClass('on');
-        $('nav .menu > li').removeClass('on').find('.sub-menu').slideUp(100);
+        $('nav .main-menu > li').removeClass('on').find('.sub-menu').slideUp(100);
     });
 
     /******************** 셀렉트박스 제어 ********************/
