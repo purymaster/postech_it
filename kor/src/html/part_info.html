@@ -1,0 +1,142 @@
+@@include('header.html')
+<div class="content sub_page">
+
+	@@include('sub_visual.html',{
+	"title" : "학부",
+	"type" : "type3",
+	"sub_menu" : "교육"
+	})
+
+	<!-- 서브 페이지 컨텐츠 -->
+	<div class="" data-sub-content>
+		<div class="container">
+
+			@@include('../inc/tab.html',{
+			"has_tab" : true,
+			"tab_list" : ["개요","교과 이수 총괄표","창의교육 프로그램","단기유학 프로그램","학생지원제도"],
+			"type" : "type5"
+			})
+
+			<!-- 컨텐츠 내용 -->
+			<div data-content-box>
+				<h3 class="sub_title">학부교육체계</h3>
+				<div data-graphic>
+					<img src="../img/img/img_part_system.png" alt="">
+					<div class="hidden">
+						cite, great place for learning
+						elective courses without boundaries
+						<dl>
+							<dt>personal growth statement</dt>
+							<dd>Strive to Search for Interested Research Areas</dd>
+							<dd>Initiate Learning &amp; Research</dd>
+							<dd>Design Relevant Courses and Establish Future Plan</dd>
+							<dt>creative it design courses</dt>
+							<dd>Smart Computing </dd>
+							<dd>Smart Devices and Circuit</dd>
+							<dd>Smart System and Robotics</dd>
+							<dd>IT-based Future Healthcare</dd>
+							<dt>creative studio courses</dt>
+							<dd>Interaction Design Studio</dd>
+							<dd>Play and Game Studio</dd>
+							<dd>Life Sensibility &amp; Transhuman Studio</dd>
+							<dd>Human-Centered Design Studio</dd>
+						</dl>
+						transdisciplinary
+						<ul>
+							<li>University Core Courses</li>
+							<li>Science &amp; Technology Core Courses</li>
+							<li>Humanities Arts And Social Sciences Courses</li>
+							<li>Condensed &amp; Intensive Courses</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div data-content-box>
+				<h3 class="sub_title">교과과정 운영 전략</h3>
+				<ul class="type1 major" data-list>
+					<li>
+						기존 공학교육을 넘어서는 i형 인재양성 교육과정 수립
+						<ul class="type3" data-list>
+							<li>3~6년간의 교육기간 동안 스스로 문제해결을 할 수 있는 환경 조성</li>
+							<li>대학에서 제공하기 어려운 주제에 대해서 Short course 또는 Intensive course를 적극 운영</li>
+						</ul>
+					</li>
+					<li>
+						CiTE의 3+3 혁신 교육 체계
+						<div data-graphic>
+							<img src="../img/img/img_part_progress.png" alt="">
+							<div class="hidden">
+								IT 혁신 교육체계
+								<ol>
+									<li>학부과정(3년)</li>
+									<li>석&middot;박사 과정(3년)</li>
+									<li>박사학위(6년)</li>
+								</ol>
+							</div>
+						</div>
+						<ul class="type3" data-list>
+							<li><strong>창의 촉발의 최적화 교과 과정</strong> → 창의 Studio + 창의IT설계 + PGS설계(학생주도학습) + 인문기술융합개론 설계/운영
+							</li>
+							<li><strong>프로젝트 위주의 교과운영을 통한 학생의 교육 몰입도 향상 기대</strong> → 학부부터 연구활동에 적극적인 참여 유도</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div data-content-box>
+				<h3 class="sub_title">융합 교육 및 연구</h3>
+				<div data-graphic>
+					<img src="../img/img/img_part_require.png" alt="">
+					<div class="hidden">
+						<dl>
+							<dt>기초필수(27학점)</dt>
+							<dd>물리</dd>
+							<dd>화학</dd>
+							<dd>생명</dd>
+							<dd>프로그래밍</dd>
+							<dd>미적분</dd>
+							<dd>응용선형대수</dd>
+							<dt>교양필수(14학점)</dt>
+							<dd>글쓰기</dd>
+							<dd>인문과 예술</dd>
+							<dd>과학과 사회</dd>
+							<dd>체육</dd>
+							<dd>영어인증(창의IT별도)</dd>
+							<dt>교양선택(15학점)</dt>
+							<dd>postech 교양선택 + 해외대학 교양선택</dd>
+							<dt>전공필수(31학점)</dt>
+							<dd>pgs 설계</dd>
+							<dd>인문기술융합개론</dd>
+							<dd>창의studio</dd>
+							<dd>창의it설계 1~4</dd>
+							<dt>전공선택(33학점)</dt>
+							<dd>pgs에 따른 다양한 선택</dd>
+						</dl>
+						기술(it)+과학, 인문, 사회, 경영, 예술의 융합(120학점/3년)
+					</div>
+				</div>
+				<ul class="type1 major" data-list>
+					<li>
+						전공필수
+						<ul class="type3" data-list>
+							<li><strong>창의IT설계</strong> : 팀 및 개인 프로젝트 수행을 통해 IT융합 기술을 단계적으로 습득</li>
+							<li><strong>창의스튜디오</strong> : 자유로운 브레인 스토밍과 아이디어 공유를 위한 스튜디오 교과(3과목)</li>
+							<li><strong>인문기술융합개론</strong> : 인문, 예술분야의 상상력 + 공학적 지식</li>
+							<li><strong>PGS(Personal Growth Statement)설계</strong> : 자기주도 성장계획 설계 과정</li>
+						</ul>
+					</li>
+					<li>
+						전공선택
+						<ul class="type3" data-list>
+							<li>POSTECH 모든 학과 전공 교과목을 창의IT 전공선택으로 인정</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- //컨텐츠 내용 -->
+
+		</div>
+	</div>
+	<!-- //서브 페이지 컨텐츠 -->
+
+</div>
+@@include('footer.html')

@@ -251,14 +251,13 @@ header .search button.on + input[type="text"] {-webkit-transform:scaleX(1);trans
 	header .top_menu:before {display:none;}
 	header .top_menu a {border-color:#ccc;}
 	header .search button {margin-top:3px;}
-	header .search input[type="text"] {height:30px; line-height:30px; width:calc(100vw - 100px);}
+	header .search input[type="text"] {height:30px; line-height:30px; width:200px;}
 }
 
 @media (max-width:599px) {
 	header nav {padding:10px 15px;}
 	header .open_menu {left:15px;}
 	header .search {right:15px;}
-	header .search input[type="text"] {width:calc(100vw - 70px);}
 }
 
 /* 워드프레스 관리자 헤더 커스터마이징 */
@@ -541,7 +540,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 }
 
 @media (max-width:599px) {
-	[data-sub-content] .inner_left {padding-left:15px;}
+	[data-sub-content] .inner_left {padding:0;}
 }
 
 /* 서브 페이지 비주얼 */
@@ -583,6 +582,8 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 [data-tab-menu] ul.type3 li {width:33.33%;}
 [data-tab-menu] ul.type4 li {width:25%;}
 [data-tab-menu] ul.type5 li {width:20%;}
+[data-tab-menu] ul.type6 li {width:16.66%;}
+[data-tab-menu] ul.type7 li {width:14.28%;}
 [data-tab-menu] ul li a {display:block; position:relative; width:100%; height:60px; border:1px solid #e8e5e2; border-left:0; text-align:center; transition:all 0.3s;}
 [data-tab-menu] ul li:first-child a {border-left:1px solid #e8e5e2;}
 [data-tab-menu] ul li.on a,[data-tab-menu] ul li a:hover {border-color:#bba078; border-bottom-color:#fff; background:#fff; color:#a98147;}
@@ -629,6 +630,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 [data-list].type3 > li:before {top:0.8em; width:2px; height:2px; background:#333;}
 [data-sub-content] .empas {margin-top:12px; padding:0.15em 0; font-size:14px; font-weight:500; line-height:1.5em;}
 [data-sub-content] .empas:before {padding-right:0.3em; content:"※";}
+[data-sub-content] .empas + .empas {margin:0;}
 [data-list] [data-list] {margin-top:10px;}
 
 @media (max-width:599px) {
@@ -637,26 +639,29 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 	[data-list].type1.major > li {padding:0.2em 0; padding-left:15px; font-size:14px;}
 	[data-list].type1.major > li:before {top:0.8em;}
 	[data-sub-content] .empas {margin-top:10px; font-size:12px;}
+	[data-list] [data-list] {margin-top:5px;}
 }
 
 /* 테이블 초기화 */
 table {border-bottom:1px solid #e8e5e2;}
 table th,
-table td {text-align:center; vertical-align:middle;}
+table td {font-size:14px; font-weight:normal; text-align:center; vertical-align:middle;}
 caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
 
 /* 데이터 테이블 */
-[data-table] {overflow:hidden; margin-top:10px;}
+[data-table] {overflow:hidden; margin-top:10px; margin-bottom:20px;}
 [data-table] table {width:calc(100% + 1px); margin-left:-1px; border-top:1px solid #cdc9c6;}
 [data-table] table thead th {background:#f9f7f5;}
 [data-table] table th,
-[data-table] table td {padding:1em 0.3em; border-bottom:1px solid #e8e5e2; border-left:1px solid #e8e5e2;}
+[data-table] table td {padding:1em 30px; border-bottom:1px solid #e8e5e2; border-left:1px solid #e8e5e2;}
 [data-table] table th.left,
 [data-table] table td.left {text-align:left;}
 [data-table] table .grey {color:#999;}
 [data-table] table .pink {color:#ca0464;}
 [data-table] table .gold {color:#bba078;}
 [data-table] table .bold {font-weight:700;}
+[data-table] table .big {font-size:1.1em;}
+[data-table] table .line {text-decoration:underline;}
 
 @media (max-width:1024px) {
 	[data-table] table th,
@@ -664,6 +669,7 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 }
 
 @media (max-width:599px) {
+	[data-table] table th,
 	[data-table] table td {font-size:12px;}
 }
 
@@ -960,6 +966,27 @@ textarea {line-height:1.5em;}
 	[data-board-gallery] ul li:nth-child(2n+1) {clear:none;}
 }
 
+/* 인포그래픽 */
+[data-graphic] {margin-top:30px; text-align:center;}
+[data-graphic]:after {display:block; clear:both; content:"";}
+[data-graphic] img {display:block; margin:0 auto;}
+
+@-webkit-keyframes zoom_txt {
+    0% {-webkit-transform:scale(1); transform:scale(1);}
+	50% {-webkit-transform:scale(1.05); transform:scale(1.05);}
+    100% {-webkit-transform:scale(1); transform:scale(1);}
+}
+
+@keyframes zoom_txt {
+    0% {-webkit-transform:scale(1); transform:scale(1);}
+	50% {-webkit-transform:scale(1.05); transform:scale(1.05);}
+    100% {-webkit-transform:scale(1); transform:scale(1);}
+}
+
+@media (max-width:599px) {
+	[data-graphic]:before {display:block; margin-bottom:10px; font-size:12px; color:#ca0464; animation:zoom_txt 1s linear infinite; transform-origin:center; content:"모바일에서는 확대해서 확인해주시길 바랍니다.";}
+}
+
 /* 주임교수인사말 */
 
 /* 연혁 */
@@ -988,12 +1015,6 @@ textarea {line-height:1.5em;}
 	.organ .chart .vice {background:#bba078 !important;}
 	.organ .chart .vice_master {background:#666 !important;}
 }
-
-/* 교육철학 */
-.philosophy .img_wrap {margin-top:20px; padding-top:55.91%; background:url(../img/bg/bg_philosophy.png) no-repeat top center; background-size:contain;}
-
-/* 학부 - 창의교육 프로그램 */
-.part_creative .img_wrap {display:block; margin:30px auto;}
 
 /* 강의실/세미나실 예약 */
 [data-calendar] {clear:both;}

@@ -3,14 +3,15 @@ $(function() {
     var is_mobile = false, //모바일 판별 변수
         scrollbar_width = window.outerWidth - $(window).width(); // 스크롤바 너비
 
-    /******************** 모바일 판별 및 네비게이션 초기화 ********************/
+    /******************** 모바일 판별 및 네비게이션, 검색창 초기화 ********************/
 
     $(window).on('load resize', function() {
+        $('h1').removeClass('hidden');
+        $('header .search button').removeClass('on').siblings('input').val('');
         ($(window).width() + scrollbar_width) > 1024 ?
             (
                 is_mobile = false,
-                $('header .menu_wrap').removeClass('on'),
-                $('nav .main-menu li').removeClass('on'),
+                $('header .menu_wrap,nav .main-menu li').removeClass('on'),
                 $('header nav .sub-menu').show()
             ) : (
                 is_mobile = true,
@@ -28,9 +29,13 @@ $(function() {
     /******************** 헤더 검색창 제어 ********************/
 
     $('header .search button').on('click', function() {
+        if (is_mobile) $('h1').addClass('hidden');
         $(this).hasClass('on') ?
             $(this).siblings('input[type="text"]').val() === "" ?
-            $(this).text('검색창 열기').removeClass('on') :
+            (
+                $(this).text('검색창 열기').removeClass('on'),
+                $('h1').removeClass('hidden')
+            ) :
             // [D] 검색 결과 페이지로 이동
             location.href = "https://naver.com" :
             $(this).addClass('on').text('검색창 닫기');

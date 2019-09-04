@@ -11,7 +11,7 @@
 	<div class="" data-sub-content>
 		<div class="container">
 
-			<!-- 페이지명 -->
+			<!-- 컨텐츠 내용 -->
 
 			@@include('../inc/tab.html',{
 			"has_tab" : true,
@@ -100,7 +100,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<span class="bold">내용1</span>
+								<span class="big bold">내용1</span>
 							</td>
 							<td>
 								<span class="grey">내용2</span>
@@ -401,13 +401,17 @@
 						</li>
 					</ul>
 				</div>
-				<div class="btn_wrap">
-					<a href="#" title="목록">
-						<span>목록</span>
-					</a>
-				</div>
 			</div>
-			<!-- 게시판 뷰 -->
+			<!-- //게시판 뷰 -->
+
+			<!-- 하단 버튼 -->
+			<p class="guide_tit">하단 버튼</p>
+			<div class="btn_wrap">
+				<a href="#" title="목록">
+					<span>목록</span>
+				</a>
+			</div>
+			<!-- //하단 버튼 -->
 
 			<!-- 갤러리 게시판 -->
 			<p class="guide_tit">갤러리 게시판</p>
@@ -483,7 +487,14 @@
 			@@include('paging.html')
 			<!-- //갤러리 게시판 -->
 
-			<!-- //페이지명 -->
+			<!-- 인포그래픽 -->
+			<p class="guide_tit">인포그래픽</p>
+			<div data-graphic>
+				<img src="../img/img/img_philosophy.png" alt="여기에 대체텍스트 적거나 hidden 클래스 준 div에 ir기법을 사용하여 접근성을 지켜주세요.">
+			</div>
+			<!-- //인포그래픽 -->
+
+			<!-- //컨텐츠 내용 -->
 
 		</div>
 	</div>
