@@ -4,7 +4,7 @@ const src = 'src',
 	srcPath = {
 		html: `${src}/**/*.html`,
 		css: `${src}/css/*.css`,
-		font: `${src}/font/*`,
+		font: `${src}/fonts/*`,
 		js: `${src}/js/*.js`,
 		img: `${src}/img/**/*.{png,jpg,jpeg,gif,svg}`,
 		include: `${src}/inc/`
@@ -12,7 +12,7 @@ const src = 'src',
 	devPath = {
 		html: `${dev}/`,
 		css: `${dev}/css/`,
-		font: `${dev}/font/`,
+		font: `${dev}/fonts/`,
 		js: `${dev}/js/`,
 		img: `${dev}/img/`,
 		include: `${dev}/inc/`

@@ -346,11 +346,11 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 
 /* 메인 비주얼 슬라이드 */
 .main_page .main_visual .slider {position:relative;}
-.main_page .main_visual [data-slide] .slide {height:725px; padding-top:135px; background-position:center; background-size:cover; color:#fff;}
-.main_page .main_visual [data-slide] .sub_txt {font-size:40px; line-height:1.35em; -webkit-animation-delay:1s; animation-delay:1s; opacity:0;}
-.main_page .main_visual [data-slide] strong {display:block; margin-top:10px; font-size:52px; font-weight:700; line-height:1.25em; -webkit-animation-delay:1.5s; animation-delay:1.5s; opacity:0;}
+.main_page .main_visual [data-slide] .slide {z-index:0 !important; height:725px; padding-top:135px; background-position:center; background-size:cover; color:#fff;}
+.main_page .main_visual [data-slide] .sub_txt {font-size:40px; line-height:1.35em; -webkit-animation-delay:1s; animation-delay:1s; opacity:0; -webkit-animation-play-state:paused; animation-play-state:paused;}
+.main_page .main_visual [data-slide] strong {display:block; margin-top:10px; font-size:52px; font-weight:700; line-height:1.25em; -webkit-animation-delay:1.5s; animation-delay:1.5s; opacity:0; -webkit-animation-play-state:paused; animation-play-state:paused;}
 .main_page .main_visual [data-slide] .slick-active .sub_txt,
-.main_page .main_visual [data-slide] .slick-active strong {-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft;}
+.main_page .main_visual [data-slide] .slick-active strong {-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft; -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards; -webkit-animation-play-state:running; animation-play-state:running;}
 .main_page .main_visual [data-slide] .slick-arrow {position:absolute; top:50%; z-index:1; width:58px; height:58px; margin-top:-30px; border:1px solid #fff; border-radius:50%; text-indent:-9999px; -webkit-transition:all 0.3s; transition:all 0.3s;}
 .main_page .main_visual [data-slide] .slick-arrow:hover {background:#fff;}
 .main_page .main_visual [data-slide] .slick-arrow:before {position:absolute; top:50%; left:50%; width:6px; height:6px; margin:-4px 0 0 -4px; border-top:2px solid #fff; border-right:2px solid #fff; -webkit-transition:all 0.3s; transition:all 0.3s; content:"";}
@@ -471,7 +471,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 .main_page .seminar .list_wrap ul li a:after {visibility:hidden; position:absolute; top:0; left:0; -webkit-box-sizing:border-box; box-sizing:border-box; width:100%; height:100%; border:2px solid #ca0464; -webkit-transition:all 0.3s; transition:all 0.3s; opacity:0; content:"";}
 .main_page .seminar .list_wrap ul li a:hover:after {visibility:visible; opacity:1;}
 .main_page .seminar .list_wrap ul li .date {font-family:"Open Sans"; font-size:16px; font-weight:700; color:#999;}
-.main_page .seminar .list_wrap ul li .tit {overflow:hidden; height:3.9em; margin-top:5px; font-family:"Open Sans"; font-size:24px; line-height:1.3em; color:#333; -webkit-transition:all 0.3s; transition:all 0.3s;}
+.main_page .seminar .list_wrap ul li .tit {overflow:hidden; height:3.9em; margin-top:5px; font-size:24px; line-height:1.3em; color:#333; -webkit-transition:all 0.3s; transition:all 0.3s;}
 .main_page .seminar .list_wrap ul li a:hover .tit {color:#ca0464;}
 .main_page .seminar .list_wrap .more {position:absolute; top:-35px; right:0;}
 
@@ -1219,4 +1219,4 @@ textarea {line-height:1.5em;}
 .fadeInLeft {-webkit-animation-name:fadeInLeft; animation-name:fadeInLeft;}
 .fadeInRight {-webkit-animation-name:fadeInRight; animation-name:fadeInRight;}
 .wait-animation {opacity:0; -webkit-animation-play-state:paused; animation-play-state:paused;}
-.animated {-webkit-animation-duration:1s; animation-duration:1s; -webkit-animation-fill-mode:both; animation-fill-mode:both;}
+.animated {-webkit-animation-duration:1s;animation-duration:1s; -webkit-animation-fill-mode:both; animation-fill-mode:both; opacity:1 \0/IE8+9 !important;}
