@@ -1,0 +1,70 @@
+@@include('header.html')
+<div class="content sub_page">
+
+	@@include('sub_visual.html',{
+	"title" : "대학원",
+	"type" : "type3",
+	"sub_menu" : "교육"
+	})
+
+	<!-- 서브 페이지 컨텐츠 -->
+	<div class="" data-sub-content>
+		<div class="container">
+
+			@@include('../inc/tab.html',{
+			"has_tab" : true,
+			"tab_list" : ["개요","교과목 일람표","학위","Q.E","학생지원","대학원 프로그램","졸업"],
+			"type" : "type7"
+			})
+
+			<!-- 컨텐츠 내용 -->
+			<div data-content-box>
+				<h3 class="sub_title">박사 자격 시험 (Q.E)</h3>
+				<ul class="type1 major" data-list>
+					<li>
+						지원자격
+						<ul class="type3" data-list>
+							<li>입학 후 본인이 희망하는 때에 응시 가능(적용시기: ~2015학번)</li>
+							<li>
+								Lab Rotation 종료 후 응시 가능(적용시기: 2016학번부터)<br>
+								《입학 후 4학기 이내 통과하여야 하며, 주제발표 및 구술시험의 경우 총 2회 지원
+								가능》
+							</li>
+						</ul>
+					</li>
+					<li>
+						아래 두 가지 요건을 충족시킬 경우 Q.E.합격으로 인정함
+						<ul data-list>
+							<li>
+								<strong>요건 1. IT분야 교과목 1과목, IT분야 이외 교과목 1과목을 이수하여 A-이상의 성적을 취득</strong>
+								<ul class="type2" data-list>
+									<li>IT분야 교과목: IT관련 학과(전자, 컴공 등) 대학원 교과목</li>
+									<li>IT분야 이외 교과목: IT관련 학과를 제외한 타 학과 대학원 교과목(영어교과목, 세미나 과목 제외)</li>
+								</ul>
+								<strong>요건 2. 주제발표 및 구술시험(Q&amp;A)을 실시하여 통과한 경우</strong>
+								<ul class="type2" data-list>
+									<li>요건2를 충족하기 위해 대상자는 3명의 평가위원을 대학원주무교수에게 추천함 (단, 지도교수 제외)</li>
+									<li>평가위원은 현재 학생의 연구분야가 아닌 타 분야에서 각 1개의 연구주제를 제시하고, 위원장과 학생이 서로 상의하여 하나의 주제를 선택함</li>
+									<li>대상자는 선택한 주제를 4주동안 연구한 뒤, 서면으로 제안서를 작성하여 제출함</li>
+									<li>주제 발표 및 구술시험(Q&A)는 영어로 각 30분씩 실시함 (지도교수를 제외한 모든 구성원의 참관 가능)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div data-file-list>
+					<ul>
+						<li><a href="#"><i></i>주제발표 및 구술시험(Q&A) 신청서</a></li>
+						<li><a href="#"><i></i>주제발표 및 구술시험(Q&A) 평가표</a></li>
+						<li><a href="#"><i></i>수강교과목 확인서</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //컨텐츠 내용 -->
+
+		</div>
+	</div>
+	<!-- //서브 페이지 컨텐츠 -->
+
+</div>
+@@include('footer.html')

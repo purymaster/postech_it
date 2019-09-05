@@ -347,10 +347,12 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 /* 메인 비주얼 슬라이드 */
 .main_page .main_visual .slider {position:relative;}
 .main_page .main_visual [data-slide] .slide {z-index:0 !important; height:725px; padding-top:135px; background-position:center; background-size:cover; color:#fff;}
-.main_page .main_visual [data-slide] .sub_txt {font-size:40px; line-height:1.35em; animation-delay:1s; opacity:0; animation-play-state:paused;}
-.main_page .main_visual [data-slide] strong {display:block; margin-top:10px; font-size:52px; font-weight:700; line-height:1.25em; animation-delay:1.5s; opacity:0; animation-play-state:paused;}
+.main_page .main_visual [data-slide] .sub_txt {font-size:40px; line-height:1.35em;}
+.main_page .main_visual [data-slide] strong {display:block; margin-top:10px; font-size:52px; font-weight:700; line-height:1.25em;}
+/* .main_page .main_visual [data-slide] .sub_txt,
+.main_page .main_visual [data-slide] strong {visibility:hidden; opacity:0; transition:all 0.3s;}
 .main_page .main_visual [data-slide] .slick-active .sub_txt,
-.main_page .main_visual [data-slide] .slick-active strong {animation-name:fadeInLeft; animation-fill-mode:forwards; animation-play-state:running;}
+.main_page .main_visual [data-slide] .slick-active strong {visibility:visible; opacity:1;} */
 .main_page .main_visual [data-slide] .slick-arrow {position:absolute; top:50%; z-index:1; width:58px; height:58px; margin-top:-30px; border:1px solid #fff; border-radius:50%; text-indent:-9999px; transition:all 0.3s;}
 .main_page .main_visual [data-slide] .slick-arrow:hover {background:#fff;}
 .main_page .main_visual [data-slide] .slick-arrow:before {position:absolute; top:50%; left:50%; width:6px; height:6px; margin:-4px 0 0 -4px; border-top:2px solid #fff; border-right:2px solid #fff; transition:all 0.3s; content:"";}
@@ -618,7 +620,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 }
 
 /* 리스트 및 강조 */
-[data-list] > li {position:relative; padding:0.15em 0; font-size:14px; line-height:1.5em;}
+[data-list] > li {position:relative; padding:0.15em 0; font-size:14px; font-weight:400; line-height:1.5em;}
 [data-list] > li:before {position:absolute; left:0; content:"";}
 [data-list].type1 > li {padding-left:20px;}
 [data-list].type1 > li:before {top:0.7em; width:0.7em; height:0.3em; background:#bba078;}
@@ -631,7 +633,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 [data-sub-content] .empas {margin-top:12px; padding:0.15em 0; font-size:14px; font-weight:500; line-height:1.5em;}
 [data-sub-content] .empas:before {padding-right:0.3em; content:"※";}
 [data-sub-content] .empas + .empas {margin:0;}
-[data-list] [data-list] {margin-top:10px;}
+[data-list] [data-list] {margin:5px 0;}
 
 @media (max-width:599px) {
 	[data-list] > li {font-size:12px;}
@@ -661,7 +663,7 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 [data-table] table .gold {color:#bba078;}
 [data-table] table .bold {font-weight:700;}
 [data-table] table .big {font-size:1.1em;}
-[data-table] table .line {text-decoration:underline;}
+[data-table] table .link {text-decoration:underline;}
 
 @media (max-width:1024px) {
 	[data-table] table th,
@@ -986,6 +988,19 @@ textarea {line-height:1.5em;}
 @media (max-width:599px) {
 	[data-graphic]:before {display:block; margin-bottom:10px; font-size:12px; color:#ca0464; animation:zoom_txt 1s linear infinite; transform-origin:center; content:"모바일에서는 확대해서 확인해주시길 바랍니다.";}
 }
+
+/* 파일 리스트 */
+[data-file-list] {margin-top:30px;}
+[data-file-list] ul {overflow:hidden; margin:-8px;}
+[data-file-list] ul li {float:left; width:33.33%; padding:8px;}
+[data-file-list] ul li a {display:block; position:relative; overflow:hidden; padding-right:20px; padding-left:55px; border:1px solid #ededed; line-height:48px; text-overflow:ellipsis; white-space:nowrap; transition:all 0.3s;}
+[data-file-list] ul li a:hover {color:#ca0464; text-decoration:underline;}
+[data-file-list] ul li a:after {position:absolute; top:30px; left:27px; width:10px; height:1px; background:#fff; content:"";}
+[data-file-list] ul li a i {position:absolute; top:50%; left:20px; width:25px; height:25px; margin-top:-12px; border-radius:50%; background:#ca0464;}
+[data-file-list] ul li a i:before,
+[data-file-list] ul li a i:after {content:""; position:absolute;}
+[data-file-list] ul li a i:before {top:6px; left:50%; width:1px; height:9px; margin-left:-1px; background:#fff;}
+[data-file-list] ul li a i:after {top:9px; left:9px; width:5px; height:5px; border-right:1px solid #fff; border-bottom:1px solid #fff; transform:rotate(45deg);}
 
 /* 주임교수인사말 */
 
