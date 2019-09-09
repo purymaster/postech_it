@@ -13,169 +13,88 @@
 
 			<!-- 컨텐츠 내용 -->
 			<div data-content-box>
-				<div class="loading_p" id="res_cal_loading_con" style="display: none;">
-					<div class="wrapper">
-						<div class="txt">로딩중입니다.</div>
-					</div>
-				</div>
 				<div data-calendar>
 					<div class="calendar_header">
-						<div class="title_bx">
-							<h4>Reservation of seminar room</h4>
-						</div>
-						<div class="date">
-							<h5>
-								<span class="normal red">September,</span>
-								<span class="normal">2019</span>
-							</h5>
-							<a class="arrow_box left" href="#" data-id="-1">prev</a>
-							<a class="arrow_box right" href="#" data-id="+1">next</a>
-						</div>
-					</div>
-					<div class="calendar_body">
-						<div class="day_box">
-							<div class="day red">일</div>
-							<div class="day">월</div>
-							<div class="day">화</div>
-							<div class="day">수</div>
-							<div class="day">목</div>
-							<div class="day">금</div>
-							<div class="day blue">토</div>
-						</div>
-						<div class="number_list">
-							<div class="line_box">
-								<div class="num_bx">
-									<div class="wrapper">
-										<span class="number none"></span>
-									</div>
-								</div>
-								<div class="num_bx">
-									<div class="wrapper">
-										<span class="number none"></span>
-									</div>
-								</div>
-								<div class="num_bx">
-									<div class="wrapper">
-										<span class="number none"></span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-01">
-										<span class="number">1</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-02">
-										<span class="number">2</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-03">
-										<span class="number">3</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-04">
-										<span class="number">4</span>
-									</div>
-								</div>
+						<div class="calendar_tit">Reservation of seminar room</div>
+						<div class="calendar_info">
+							<div class="date">
+								<span class="month">December,</span>
+								<span class="year">9999</span>
 							</div>
-							<div class="line_box">
-								<div class="num_bx num_day register_day">
-									<!-- [D] 예약된 날 -->
-									<div class="wrapper" data-date="2020-01-05">
-										<span class="number">5</span>
-										<div class="memo_box">
-											<ul>
-												<li>
-													<span class="bold">2개</span>
-													<span class="nor_txt">예약이 있습니다</span>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="hover_box">
-										<div class="wrapper">
-											<div class="check_list">
-												<ul>
-													<li>
-														<dl>
-															<dt>
-																<span class="txt">303호</span>
-															</dt>
-															<dd class="show_box">
-																<p>예약자 : cse</p>
-																<p>소속/연구실 : 컴공과 행정실</p>
-																<p>사용목적 : 교수회의</p>
-																<p>
-																	2019.12.02
-																	<span class="gold">
-																		15:00 - 18:00
-																		하루예약
-																	</span>
-																</p>
-															</dd>
-														</dl>
-													</li>
-													<li>
-														<dl>
-															<dt>
-																<span class="txt">303호</span>
-															</dt>
-															<dd class="show_box">
-																<p>예약자 : cse</p>
-																<p>소속/연구실 : 컴공과 행정실</p>
-																<p>사용목적 : 교수회의</p>
-																<p>
-																	2019.12.02
-																	<span class="gold">
-																		18:00 - 21:00
-																		정기예약
-																	</span>
-																</p>
-															</dd>
-														</dl>
-													</li>
-												</ul>
-											</div>
-											<div class="arrow"></div>
-										</div>
-									</div>
-									<!-- [D] //예약된 날 -->
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-06">
-										<span class="number">6</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-07">
-										<span class="number">7</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-08">
-										<span class="number">8</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-09">
-										<span class="number">9</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-10">
-										<span class="number">10</span>
-									</div>
-								</div>
-								<div class="num_bx num_day register_day">
-									<div class="wrapper" data-date="2020-01-11">
-										<span class="number">11</span>
-									</div>
-								</div>
+							<div class="ctr">
+								<button type="button" class="prev">이전</button>
+								<button type="button" class="next">다음</button>
 							</div>
 						</div>
 					</div>
+
+					<!-- 일자 출력 부분 -->
+					<div data-calendar-table>
+						<table>
+							<colgroup>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="row">일</th>
+									<th scope="row">월</th>
+									<th scope="row">화</th>
+									<th scope="row">수</th>
+									<th scope="row">목</th>
+									<th scope="row">금</th>
+									<th scope="row">토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<span class="num">1</span>
+										<p class="msg">
+											<strong>999개</strong> 예약이 있습니다.
+										</p>
+										@@include('rev_detail.html')
+									</td>
+									<td>
+										<span class="num">2</span>
+									</td>
+									<td>
+										<span class="num">3</span>
+									</td>
+									<td>
+										<span class="num">4</span>
+									</td>
+									<td>
+										<span class="num">5</span>
+									</td>
+									<td>
+										<span class="num">6</span>
+									</td>
+									<td>
+										<span class="num">7</span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="num">8</span>
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //일자 출력 부분 -->
+
 				</div>
 			</div>
 			<!-- //컨텐츠 내용 -->

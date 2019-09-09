@@ -91,6 +91,7 @@ input::-moz-focus-inner {margin-top:-2px; margin-bottom:-2px; padding:0; border:
 img {max-width:100%; height:auto;}
 button {cursor:pointer; background:transparent;}
 button span {position:relative;}
+textarea {resize:none;}
 textarea:focus {outline:none;}
 em,address,i {font-style:normal;}
 :focus {outline:none;}
@@ -323,6 +324,20 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 7. 모달
 =========================================================*/
 
+[data-modal] {position:fixed; top:0; right:0; bottom:0; left:0; z-index:100; background:rgba(0,0,0,0.3);}
+[data-modal] .modal {overflow-y:auto; position:absolute; top:50%; left:50%; max-width:calc(100vw - 60px); max-height:calc(100vh - 60px); padding:30px; border:1px solid #999; background:#fff; -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); -webkit-box-shadow:10px 10px 20px rgba(0,0,0,0.05); box-shadow:10px 10px 20px rgba(0,0,0,0.05);}
+[data-modal] .modal_tit {font-size:20px; font-weight:500; line-height:1.5em;}
+[data-modal] .modal_subtxt {margin-top:15px; padding:15px 20px; background:#f9f7f5;}
+[data-modal] .modal_subtxt p {font-size:14px; line-height:1.85em; color:#555;}
+[data-modal] .modal_subtxt p strong {font-weight:400; color:#ca0464;}
+[data-modal] .modal .close {position:absolute; top:35px; right:30px; width:20px; height:20px; text-indent:-9999px;}
+[data-modal] .modal .close:before,[data-modal] .modal .close:after {position:absolute; left:0; width:1px; height:28px; background:#999; content:"";}
+[data-modal] .modal .close:before {top:0; -webkit-transform:rotate(-45deg); transform:rotate(-45deg); -webkit-transform-origin:top; transform-origin:top;}
+[data-modal] .modal .close:after {bottom:0; -webkit-transform:rotate(45deg); transform:rotate(45deg); -webkit-transform-origin:bottom; transform-origin:bottom;}
+
+/* 장소 예약 */
+[data-modal] .res {width:600px;}
+
 /*=========================================================
 8. 메인 페이지 스타일
 =========================================================*/
@@ -546,7 +561,14 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 }
 
 /* 서브 페이지 비주얼 */
-[data-sub-visual] {display:table; width:100%; height:250px; background:#ccc; background-position:center; color:#fff; text-align:center;}
+[data-sub-visual] {display:table; width:100%; height:250px; background:#ccc; background-position:center; background-size:cover; color:#fff; text-align:center;}
+[data-sub-visual].type1 {background-image:url('../img/bg/bg_sub_type1.jpg');}
+[data-sub-visual].type2 {background-image:url('../img/bg/bg_sub_type2.jpg');}
+[data-sub-visual].type3 {background-image:url('../img/bg/bg_sub_type3.jpg');}
+[data-sub-visual].type4 {background-image:url('../img/bg/bg_sub_type4.jpg');}
+[data-sub-visual].type5 {background-image:url('../img/bg/bg_sub_type5.jpg');}
+[data-sub-visual].type6 {background-image:url('../img/bg/bg_sub_type6.jpg');}
+[data-sub-visual].type7 {background-image:url('../img/bg/bg_sub_type7.jpg');}
 [data-sub-visual] .tit_wrap {display:table-cell; vertical-align:middle;}
 [data-sub-visual] [data-breadcrumb] {display:inline-block; margin-bottom:15px; font-size:0;}
 [data-sub-visual] [data-breadcrumb] li {display:inline-block; position:relative; padding-left:23px; font-size:14px; line-height:1.5em;}
@@ -737,8 +759,7 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 
 /* 셀렉트박스 */
 .select_form {display:inline-block; position:relative; background:#fff; font-size:14px; text-align:left;}
-.select_form button {display:block; overflow:hidden; position:relative; width:100%; min-width:200px; padding:0 55px 0 15px; border:1px solid #e8e5e2; background:#fff; line-height:38px; color:#333; text-align:inherit; text-overflow:ellipsis; white-space:nowrap; -webkit-transition:border 0.3s; transition:border 0.3s;}
-.select_form button:before {position:absolute; width:1px; height:100%; background:#e8e5e2; content:""; right:38px; top:0;}
+.select_form button {display:block; overflow:hidden; position:relative; width:100%; padding:0 55px 0 15px; border:1px solid #e8e5e2; background:#fff; line-height:38px; color:#333; text-align:inherit; text-overflow:ellipsis; white-space:nowrap; -webkit-transition:border 0.3s; transition:border 0.3s;}
 .select_form button:after {position:absolute; top:50%; right:14px; width:8px; height:8px; margin-top:-7px; border-right:2px solid #333; border-bottom:2px solid #333; -webkit-transform:rotate(45deg); transform:rotate(45deg); -webkit-transition:all 0.3s; transition:all 0.3s; content:"";}
 .select_form button.on:after {margin-top:-3px; -webkit-transform:rotate(225deg); transform:rotate(225deg);}
 .select_form ul {visibility:hidden; overflow:hidden; position:absolute; width:100%; height:0; padding:4px 15px; border:1px solid #e8e5e2; border-top:0; -webkit-transition:opacity 0.3s; transition:opacity 0.3s; opacity:0;}
@@ -748,25 +769,27 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 
 /* 입력폼 초기화 */
 input[type="text"],input[type="email"],input[type="number"],input[type="tel"],input[type="password"],input[type="url"],input[type="search"],input[type="file"],textarea {-webkit-box-sizing:border-box;box-sizing:border-box; height:40px; margin:0; padding:0; padding:0 15px; border:none; border:1px solid #e8e5e2; border-radius:0; background:none; background:#fff; font-family:inherit; font-size:14px; line-height:40px; color:#999; -webkit-appearance:none;}
-textarea {line-height:1.5em;}
+textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 
 /* 검색 */
 .search_wrap {display:inline-block; position:relative; min-width:240px; font-size:0;}
 .search_wrap input[type="text"] {width:100%; padding-right:55px;}
 .search_wrap button {position:absolute; right:0; top:0; width:40px; height:40px; text-indent:-9999px; background:#555; -webkit-transition:all 0.3s; transition:all 0.3s;}
-.search_wrap button:hover {background:#ca0464;}
+.search_wrap button:hover {background:#ca0464;}초
 .search_wrap button:before,.search_wrap button:after {content:""; position:absolute;}
 .search_wrap button:before {top:24px; left:22px; width:6px; height:2px; background:#fff; -webkit-transform:rotate(45deg); transform:rotate(45deg);}
 .search_wrap button:after {top:13px; left:13px; width:8px; height:8px; border:2px solid #fff; border-radius:50%;}
 
 /* 검색 메뉴(셀렉트박스 + 검색) */
 [data-search] {margin-bottom:20px; text-align:right;}
-.search_form {margin-left:-20px; font-size:0;}
-.search_form > div {margin-left:20px; vertical-align:middle;}
+[data-search] .search_form {margin-left:-20px; font-size:0;}
+[data-search] .search_form > div {margin-left:20px; vertical-align:middle;}
+[data-search] .search_form .select_form button {min-width:200px; padding:0 39px 0 15px;}
+[data-search] .select_form button:before {position:absolute; width:1px; height:100%; background:#e8e5e2; content:""; right:38px; top:0;}
 
 @media (max-width:599px) {
-    .search_form {margin:0;}
-    .search_form > div {width:100%; margin-left:0; margin-bottom:10px;}
+    [data-search] .search_form {margin:0;}
+    [data-search] .search_form > div {width:100%; margin-left:0; margin-bottom:10px;}
 }
 
 /* 게시판 리스트 */
@@ -1002,6 +1025,118 @@ textarea {line-height:1.5em;}
 [data-file-list] ul li a i:before {top:6px; left:50%; width:1px; height:9px; margin-left:-1px; background:#fff;}
 [data-file-list] ul li a i:after {top:9px; left:9px; width:5px; height:5px; border-right:1px solid #fff; border-bottom:1px solid #fff; -webkit-transform:rotate(45deg); transform:rotate(45deg);}
 
+/* 달력 */
+[data-calendar] .calendar_header {text-align:center;}
+[data-calendar] .calendar_tit {padding:15px; background:#ca0464; font-size:20px; line-height:1.1em; color:#fff;}
+[data-calendar] .calendar_info {display:table; position:relative; width:100%; height:110px; background:#f9f7f5;}
+[data-calendar] .calendar_info .date {display:table-cell; font-size:30px; line-height:1.4em; vertical-align:middle;}
+[data-calendar] .calendar_info .date .month {font-weight:500; color:#ca0464;}
+[data-calendar] .calendar_info .ctr button {overflow:hidden; position:absolute; top:50%; width:30px; height:35px; margin-top:-17px; text-indent:-9999px;}
+[data-calendar] .calendar_info .ctr button:before,
+[data-calendar] .calendar_info .ctr button:after {position:absolute; top:50%; width:40px; height:2px; margin-top:-1px; background:#333; content:""; -webkit-transition:all 0.3s; transition:all 0.3s;}
+[data-calendar] .calendar_info .ctr button:hover:before,
+[data-calendar] .calendar_info .ctr button:hover:after {background:#ca0464;}
+[data-calendar] .calendar_info .ctr .prev {left:40px;}
+[data-calendar] .calendar_info .ctr .prev:before,
+[data-calendar] .calendar_info .ctr .prev:after {-webkit-transform-origin:left;transform-origin:left; left:11px;}
+[data-calendar] .calendar_info .ctr .prev:before {-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+[data-calendar] .calendar_info .ctr .prev:after {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+[data-calendar] .calendar_info .ctr .next {right:40px;}
+[data-calendar] .calendar_info .ctr .next:before,
+[data-calendar] .calendar_info .ctr .next:after {-webkit-transform-origin:right;transform-origin:right; right:11px;}
+[data-calendar] .calendar_info .ctr .next:before {-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+[data-calendar] .calendar_info .ctr .next:after {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+[data-calendar-table] table {border:0;}
+[data-calendar-table] tr {border-bottom:1px solid #cdc9c6;}
+[data-calendar-table] th {font-size:16px; font-weight:500; line-height:2.25em;}
+[data-calendar-table] td {position:relative; height:110px; padding:15px; padding-left:30px; text-align:left; vertical-align:top; -webkit-transition:all 0.3s; transition:all 0.3s; cursor:pointer;}
+[data-calendar-table] td:hover {background:#f9f7f5;}
+[data-calendar-table] td .num {display:block; font-size:20px; line-height:30px;}
+[data-calendar-table] tr th:first-child,
+[data-calendar-table] tr td:first-child .num {font-weight:500; color:#ca0464;}
+[data-calendar-table] tr th:last-child,
+[data-calendar-table] tr td:last-child .num {font-weight:500; color:#0066be;}
+[data-calendar-table] td .msg {position:relative; padding-left:10px; font-size:13px; line-height:1.3em;}
+[data-calendar-table] td .msg:before {position:absolute; top:4px; left:0; width:6px; height:6px; border-radius:50%; background:#bba078; content:"";}
+[data-calendar-table] .detail {visibility:hidden; position:absolute; top:50%; left:0; z-index:9; width:210px; padding:0 30px; border:1px solid #000; background:#fff; -webkit-transition:all 0.3s; transition:all 0.3s; opacity:0; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+[data-calendar-table] tr td:nth-child(n+5) .detail,
+[data-calendar-table] tr td:nth-child(n+6) .detail,
+[data-calendar-table] tr td:nth-child(n+7) .detail {left:auto; right:0;}
+[data-calendar-table] td:hover .detail {visibility:visible; opacity:1;}
+[data-calendar-table] .rev_list li {padding:25px 0; border-bottom:1px solid #cdc9c6;}
+[data-calendar-table] .rev_list li:last-child {border:0;}
+[data-calendar-table] .rev_list .tit {position:relative; font-size:14px; font-weight:500; line-height:1.3em; color:#333;}
+[data-calendar-table] .rev_list .tit:before {position:absolute; top:5px; left:-10px; width:6px; height:6px; border-radius:50%; background:#bba078; content:"";}
+[data-calendar-table] .rev_list dl {margin-top:5px;}
+[data-calendar-table] .rev_list dl > div {overflow:hidden;}
+[data-calendar-table] .rev_list dt,
+[data-calendar-table] .rev_list dd {font-size:12px; font-weight:500; line-height:1.25em; color:#999; float:left;}
+[data-calendar-table] .rev_list dt:after {padding:0 0.1em; content:":";}
+[data-calendar-table] .rev_list dd span {color:#a98147;}
+[data-calendar-table] .rev_list .ctr button {font-size:12px; color:#a98147;}
+[data-calendar-table] .rev_list .code {display:none; border-top:1px solid #cdc9c6;}
+[data-calendar-table] .rev_list .code span {font-size:12px; color:#ca0464;}
+[data-calendar-table] .rev_list .code .input_wrap {overflow:hidden;}
+[data-calendar-table] .rev_list .code .input_wrap input {float:left; width:calc(100% - 30px); height:25px; padding:0 5px; border:1px solid #ca0464; font-size:12px; line-height:25px;}
+[data-calendar-table] .rev_list .code .input_wrap button {float:left; width:30px; background:#ca0464; font-size:11px; font-weight:500; line-height:25px; color:#fff;}
+
+@media (max-width:1024px) {
+	[data-calendar] .calendar_tit {padding:10px 0; font-size:18px;}
+	[data-calendar] .calendar_info {height:60px;}
+	[data-calendar] .calendar_info .date {font-size:24px;}
+	[data-calendar] .calendar_info .ctr button {-webkit-transform:scale(0.75);transform:scale(0.75);}
+	[data-calendar] .calendar_info .ctr .prev {left:20px;}
+	[data-calendar] .calendar_info .ctr .next {right:20px;}
+	[data-calendar-table] th {font-size:14px; line-height:2em;}
+	[data-calendar-table] td {height:90px; padding:5px;}
+	[data-calendar-table] td .num {font-size:16px;}
+	[data-calendar-table] .detail {width:150px; padding:0 10px 0 15px;}
+	[data-calendar-table] .rev_list li {padding:10px 0;}
+	[data-calendar-table] .rev_list .tit {font-size:12px;}
+	[data-calendar-table] .rev_list .tit:before {top:4px;}
+	[data-calendar-table] .rev_list dt,
+	[data-calendar-table] .rev_list dd,
+	[data-calendar-table] .rev_list .ctr button,
+	[data-calendar-table] .rev_list .code span {font-size:11px;}
+	[data-calendar-table] .rev_list .code .input_wrap input {line-height:20px; height:20px;}
+	[data-calendar-table] .rev_list .code .input_wrap button {line-height:20px;}
+}
+
+@media (max-width:599px) {
+	[data-calendar] .calendar_tit {padding:5px 0; font-size:16px;}
+	[data-calendar] .calendar_info .date {font-size:18px;}
+	[data-calendar] .calendar_info {height:50px;}
+	[data-calendar] .calendar_info .ctr .prev {left:0px;}
+	[data-calendar] .calendar_info .ctr .next {right:0px;}
+	[data-calendar-table] td {height:80px; padding:3px;}
+	[data-calendar-table] td .num {font-size:14px;}
+	[data-calendar-table] td .msg {padding:0; font-size:10px;}
+	[data-calendar-table] td .msg:before {display:none;}
+	[data-calendar-table] .detail {padding:0 5px;}
+	[data-calendar-table] .rev_list li {padding:5px 0;}
+	[data-calendar-table] .rev_list .tit {font-size:11px;}
+	[data-calendar-table] .rev_list .tit:before {display:none;}
+	[data-calendar-table] .rev_list dt,
+	[data-calendar-table] .rev_list dd,
+	[data-calendar-table] .rev_list .code span {font-size:10px;}
+}
+
+/* Datepicker */
+.ui-datepicker {width:200px; border:1px solid #ca0464; background:#fff; -webkit-box-shadow:0 5px 10px 0 rgba(0,0,0,0.2); box-shadow:0 5px 10px 0 rgba(0,0,0,0.2);}
+.ui-datepicker th,.ui-datepicker td {padding:0; border:0; font-size:12px; line-height:20px;}
+.ui-datepicker th {border-bottom:1px solid #ca0464; background:#e6eff1; color:#ca0464;}
+.ui-datepicker td a {display:block; color:#999; -webkit-transition:all 0.3s; transition:all 0.3s;}
+.ui-datepicker td.ui-datepicker-unselectable span {color:#eee;}
+.ui-datepicker td a:hover {background:#ca0464; font-weight:700; color:#fff;}
+.ui-datepicker td.ui-datepicker-unselectable span {color:#eee;}
+.ui-datepicker .ui-datepicker-prev,.ui-datepicker .ui-datepicker-next {position:absolute; top:5px; width:20px; height:20px; text-indent:-9999px; -webkit-transition:all 0.3s; transition:all 0.3s;}
+.ui-datepicker .ui-datepicker-prev {left:5px;}
+.ui-datepicker .ui-datepicker-next {right:5px;}
+.ui-datepicker .ui-datepicker-prev:before,.ui-datepicker .ui-datepicker-next:before {content:""; width:10px; height:10px; border:2px solid #fff; -webkit-transform:translateX(-50%) rotate(45deg); transform:translateX(-50%) rotate(45deg); position:absolute; left:50%; top:5px;}
+.ui-datepicker .ui-datepicker-prev:before {margin-left:2px; border-top:0; border-right:0;}
+.ui-datepicker .ui-datepicker-next:before {margin-left:-2px; border-bottom:0; border-left:0;}
+.ui-datepicker .ui-datepicker-title {background:#ca0464; font-size:14px; font-weight:700; line-height:30px; color:#fff; text-align:center;}
+
 /* 주임교수인사말 */
 
 /* 연혁 */
@@ -1031,162 +1166,23 @@ textarea {line-height:1.5em;}
 	.organ .chart .vice_master {background:#666 !important;}
 }
 
-/* 강의실/세미나실 예약 */
-[data-calendar] {clear:both;}
-[data-calendar] .calendar_header .title_bx {background:#ca0464;}
-[data-calendar] .calendar_header .title_bx h4 {padding:14px 0; font-size:20px; font-weight:normal; line-height:1.1em; color:#fff; text-align:center;}
-[data-calendar] .calendar_header .date {position:relative; padding:34px 64px; background:#f9f7f5; text-align:center;}
-[data-calendar] .calendar_header .date .wrapper {position:relative; width:80%; margin:0 auto;}
-[data-calendar] .calendar_header .date h5 .normal {font-size:30px; font-weight:normal; line-height:1.4em; color:#333;}
-[data-calendar] .calendar_header .date h5 .normal.red {font-weight:500; color:#ca0464;}
-[data-calendar] .calendar_header .date .arrow_box {display:block; position:absolute; top:50%; z-index:2; width:30px; height:35px; background:red; text-indent:-9999px; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
-[data-calendar] .calendar_header .date .arrow_box.left {left:40px;}
-[data-calendar] .calendar_header .date .arrow_box.right {right:40px;}
-[data-calendar] .calendar_body .day_box {position:relative; padding:8px 0; border-bottom:1px solid #cdc9c6;}
-[data-calendar] .calendar_body .day_box:after {display:table; clear:both; content:"";}
-[data-calendar] .calendar_body .day_box .day {float:left; width:14.28%; font-size:16px; font-weight:500; color:#333; text-align:center;}
-[data-calendar] .calendar_body .day_box .day:first-child {color:#ca0464;}
-[data-calendar] .calendar_body .day_box .day:last-child {color:#0066be;}
-[data-calendar] .calendar_body .number_list {border-bottom:1px solid #cdc9c6;}
-[data-calendar] .calendar_body .number_list .line_box {display:table; width:100%; border-bottom:1px solid #ededed; table-layout:fixed;}
-[data-calendar] .calendar_body .number_list .line_box:last-child {border-bottom:none;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx {display:table-cell; position:relative; vertical-align:top;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx.register_day {cursor:pointer;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:109px; padding:16px 20px 16px 30px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx:hover {background:#f9f7f5;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper span.number {font-size:20px; line-height:1.1em; color:#333; cursor:default;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx:first-child .wrapper span.number {font-weight:500; color:#ca0464;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx:last-child .wrapper span.number {font-weight:500; color:#0066be;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:12px; cursor:default;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul {margin-bottom:-5px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li {position:relative; padding-bottom:5px; padding-left:10px; font-size:0; line-height:0;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li:before {position:absolute; top:4px; left:0; width:6px; height:6px; border-radius:50%; background:#bba078; content:""; -webkit-border-radius:50%; -moz-border-radius:50%;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.bold {display:block; margin:3px 3px 3px 0; font-size:13px; font-weight:500; line-height:1.15em; color:#333; letter-spacing:-1px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.nor_txt {font-size:13px; line-height:1.15em; color:#999; letter-spacing:-1px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {display:none; position:absolute; top:50%; left:100%; z-index:1; width:212px; border:1px solid #999; background:#fff; -webkit-transform:translate(0, -50%); transform:translate(0, -50%); -webkit-box-shadow:10px 10px 20px rgba(0,0,0,0.05); box-shadow:10px 10px 20px rgba(0,0,0,0.05);}
-[data-calendar] .calendar_body .number_list .line_box .num_bx:nth-child(6) .hover_box {right:100%; left:auto;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx:nth-child(7) .hover_box {right:100%; left:auto;}
-[data-calendar] .calendar_body .number_list .line_box:nth-child(6) .num_bx .hover_box {top:auto; bottom:-50px; -webkit-transform:translate(0, 0); transform:translate(0, 0);}
-[data-calendar] .calendar_body .number_list .line_box:last-child .num_bx .hover_box {top:auto !important; bottom:0 !important; -webkit-transform:translate(0, 0) !important; transform:translate(0, 0) !important;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx:hover .hover_box {display:block;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper {padding:2px 31px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:23px 0; border-bottom:1px solid #ededed;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li:last-child {border-bottom:none;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl {padding-left:9px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt {position:relative; margin-bottom:5px; padding-right:38px; font-size:0; line-height:0;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt:before {position:absolute; top:50%; left:-9px; z-index:1; width:6px; height:6px; margin-top:-3px; border-radius:50%; background:#bba078; content:""; -webkit-border-radius:50%; -moz-border-radius:50%;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt span.txt {font-size:14px; font-weight:500; line-height:1.3em; color:#333; letter-spacing:-1px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul {margin:0 -1px; font-size:0; line-height:0;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li {display:inline-block; padding:0 1px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p {font-size:12px; font-weight:500; line-height:1.25em; color:#999; letter-spacing:-1px;}
-[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p span.gold {margin-left:4px; font-size:12px; font-weight:500; line-height:1.25em; color:#a98147; letter-spacing:-1px;}
+/* 예약 */
+[data-reservation] {margin:0 -10px;}
+[data-reservation]:after {display:block; clear:both; content:"";}
+[data-reservation] .column_wrap {float:left; position:relative; width:100%; margin-top:25px; padding:0 10px;}
+[data-reservation] .column_wrap.half {width:50%;}
+[data-reservation] .column_wrap input[type="text"],
+[data-reservation] .column_wrap input[type="password"],
+[data-reservation] .column_wrap input[type="tel"],
+[data-reservation] .column_wrap .select_form,
+[data-reservation] .column_wrap textarea {width:100%;}
+[data-reservation] .column_wrap textarea {height:120px;}
+[data-reservation] .column_tit {margin-bottom:5px;}
+[data-reservation] .column_tit label {display:inline-block; position:relative; font-size:16px; font-weight:500; line-height:1.85em;}
+[data-reservation] .column_tit label span {position:absolute; top:0; right:0; text-indent:-9999px;}
+[data-reservation] .column_tit label span:after {position:absolute; top:0; right:-8px; color:#ca0464; text-indent:0; content:"*";}
 
-@media (max-width:1024px) {
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:100px; padding:12px 20px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:8px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {width:200px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:20px 0;}
-}
 
-@media (max-width:799px) {
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:95px; padding:10px 15px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:6px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {width:195px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:18px 0;}
-}
-
-@media (max-width:739px) {
-	[data-calendar] .calendar_header .date {padding:30px 0;}
-	[data-calendar] .calendar_body .day_box .day {font-size:15px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:90px; padding:10px 10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper span.number {font-size:18px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:6px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.bold {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.nor_txt {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li:before {width:5px; height:5px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {width:175px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper {padding:2px 18px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:16px 0;}
-}
-
-@media (max-width:639px) {
-	[data-calendar] .calendar_header .title_bx h4 {font-size:18px;}
-	[data-calendar] .calendar_header .date {padding:20px 0;}
-	[data-calendar] .calendar_header .date h5 .normal {font-size:27px;}
-	[data-calendar] .calendar_body .day_box .day {font-size:14px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:70px; padding:5px 0 8px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper span.number {font-size:16px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:2px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li {padding-left:6px; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.bold {margin-right:2px; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.nor_txt {font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li:before {width:4px; height:4px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {width:156px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper {padding:2px 18px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:12px 0;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt {padding-right:30px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt span.txt {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li > a {width:12px; height:12px; background-size:85px 47px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li.edit > a {background-position:-54px -26px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li.close > a {background-position:-42px -26px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p {font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p span.gold {font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx:nth-child(5) .wrapper .hover_box {right:100%; left:auto;}
-}
-
-@media (max-width:419px) {
-	[data-calendar] .calendar_header .title_bx h4 {font-size:18px;}
-	[data-calendar] .calendar_header .date {padding:12px 0;}
-	[data-calendar] .calendar_header .date h5 .normal {font-size:20px;}
-	[data-calendar] .calendar_header .date .arrow_box {width:20px; height:23px;}
-	[data-calendar] .calendar_header .date .arrow_box.left {left:15px;}
-	[data-calendar] .calendar_header .date .arrow_box.right {right:15px;}
-	[data-calendar] .calendar_body .day_box .day {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:65px; padding:0 0 5px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper span.number {font-size:14px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:0;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li {padding-left:4px; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.bold {margin:0 2px 0 0; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.nor_txt {display:none; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li:before {width:3px; height:3px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {width:138px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper {padding:2px 14px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:10px 0;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt {padding-right:30px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt span.txt {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li > a {width:12px; height:12px; background-size:85px 47px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li.edit > a {background-position:-54px -26px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li.close > a {background-position:-42px -26px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p {font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p span.gold {font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx:nth-child(5) .wrapper .hover_box {right:100%; left:auto;}
-}
-
-@media (max-width: 379px) {
-	[data-calendar] .calendar_header .title_bx h4 {font-size:18px;}
-	[data-calendar] .calendar_header .date {padding:12px 0;}
-	[data-calendar] .calendar_header .date h5 .normal {font-size:20px;}
-	[data-calendar] .calendar_body .day_box .day {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper {min-height:65px; padding:0 0 5px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper span.number {font-size:14px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box {margin-top:0;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li {padding-left:4px; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.bold {margin-right:1px; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li span.nor_txt {display:none; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .wrapper .memo_box > ul > li:before {width:3px; height:3px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box {width:112px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper {padding:2px 10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li {padding:7px 0;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt {padding-right:30px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt span.txt {font-size:12px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li > a {width:12px; height:12px; background-size:85px 47px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li.edit > a {background-position:-54px -26px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dt .btn_list > ul > li.close > a {background-position:-42px -26px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p {font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx .hover_box .wrapper .check_list > ul > li > dl > dd p span.gold {display:block; margin-left:0; font-size:10px;}
-	[data-calendar] .calendar_body .number_list .line_box .num_bx:nth-child(5) .wrapper .hover_box {right:100%; left:auto;}
-}
 
 /*=========================================================
 10. animate
