@@ -169,4 +169,53 @@ $(function() {
         yearSuffix: "년"
     });
 
+    /******************** 예약 시간 폼 제어 ********************/
+
+    var time_opt;
+
+    $('[data-reservation] .rev_time').find('input[type="radio"]').off().on('change', function() {
+        time_opt = $(this).data('opt');
+        $('[data-reservation] .option').find('input[type="text"],input[type="hidden"]').val('');
+        $('[data-reservation] .option').find('.select_form button span').text('-');
+        $('[data-reservation] .option').hide();
+        $(time_opt).show();
+    });
+
+    /******************** 교수 리스트 제어 ********************/
+
+    var profile = $('[data-profile] > ul > li');
+
+    $('[data-profile] .info').on('click', function() {
+        $(this).parents('li').hasClass('on') ?
+            profile.removeClass('on') :
+            (
+                profile.removeClass('on'),
+                $(this).parents('li').addClass('on')
+            )
+    });
+
+    /******************** 모달 제어 ********************/
+
+    $('[data-modal] .close').on('click', function() {
+        close_modal();
+    })
+
 });
+
+/******************** 모달, 로딩 제어 ********************/
+
+function show_modal(target) {
+    $(target).show();
+}
+
+function close_modal() {
+    $('[data-modal]').hide();
+}
+
+function show_loading() {
+    $('[data-loading]').show();
+}
+
+function hide_loading() {
+    $('[data-loading]').hide();
+}

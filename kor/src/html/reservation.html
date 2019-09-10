@@ -60,7 +60,7 @@
 										</p>
 										@@include('rev_detail.html')
 									</td>
-									<td>
+									<td onClick="show_modal('#res')">
 										<span class="num">2</span>
 									</td>
 									<td>
@@ -97,6 +97,311 @@
 
 				</div>
 			</div>
+
+			<!-- 팝업 -->
+			<div data-modal id="res" style="display:none;">
+				<div class="modal">
+					<div class="modal_tit">장소 예약<!--장소 예약 수정--></div>
+					<div class="modal_subtxt">
+						<p>요일별 정기 예약은 <strong>한 건당 한 요일씩만</strong> 선택되어집니다.</p>
+						<p>다수의 요일 예약시엔 각각 정기 예약 신청해주시기 바랍니다.</p>
+					</div>
+					<div data-reservation>
+
+						<!-- 이메일 인증 -->
+						<div class="column_wrap">
+							<div class="column_tit">
+								<label>이메일 인증</label>
+							</div>
+							<div class="email_form">
+								<div class="form_wrap">
+									<div class="column_tit sub">
+										<label for="input_01">이메일 입력<span>필수입력사항</span></label>
+									</div>
+									<div class="input_wrap">
+										<input type="text" class="mail" id="input_01">
+										<span class="at">@postech.ac.kr</span>
+										<button type="submit">보내기</button>
+									</div>
+									<div class="column_tit sub">
+										<label for="input_02">인증키 입력<span>필수입력사항</span></label>
+									</div>
+									<div class="input_wrap">
+										<input type="text" id="input_02">
+										<button type="submit">인증확인</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //이메일 인증 -->
+
+						<!-- 성명 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="input_03">성명<span>필수입력사항</span></label>
+							</div>
+							<input type="text" id="input_03">
+						</div>
+						<!-- //성명 -->
+
+						<!-- 연락처 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="input_04">연락처<span>필수입력사항</span></label>
+							</div>
+							<input type="tel" placeholder="예)010-1234-1234" id="input_04">
+						</div>
+						<!-- //연락처 -->
+
+						<!-- 인원수 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="input_05">인원수<span>필수입력사항</span></label>
+							</div>
+							<input type="text" placeholder="예)15" id="input_05">
+						</div>
+						<!-- //인원수 -->
+
+						<!-- 소속/연구실 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="input_06">소속/연구실<span>필수입력사항</span></label>
+							</div>
+							<input type="text" id="input_06">
+						</div>
+						<!-- //소속/연구실 -->
+
+						<!-- 장소 선택 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="select_01">장소 선택<span>필수입력사항</span></label>
+							</div>
+							<div class="select_form">
+								<!-- [D] 선택한 값이 저장되는 input -->
+								<input type="hidden">
+								<button type="button" id="select_01">
+									<span>-</span>
+								</button>
+								<ul>
+									<li>
+										<a href="#none">LG동412호(B) 세미나실(학부생전용)</a>
+									</li>
+									<li>
+										<a href="#none">LG동412호(B) 세미나실(학부생전용)</a>
+									</li>
+									<li>
+										<a href="#none">LG동412호(B) 세미나실(학부생전용)</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //장소 선택 -->
+
+						<!-- 예약 시간 -->
+						<div class="column_wrap">
+							<div class="column_tit">
+								<label>예약 시간<span>필수입력사항</span></label>
+							</div>
+							<div class="radio_form rev_time">
+								<ul>
+									<li>
+										<input type="radio" id="radio_01" name="radio" data-opt="#one_day" checked>
+										<label for="radio_01">하루 예약</label>
+									</li>
+									<li>
+										<input type="radio" id="radio_02" name="radio" data-opt="#multi">
+										<label for="radio_02">정기 예약</label>
+									</li>
+									<li>
+										<input type="radio" id="radio_03" name="radio" data-opt="#period">
+										<label for="radio_03">기간 예약 (※기간예약은 일단위로 예약됩니다.)</label>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 예약 옵션 -->
+							<div class="rev_opt">
+
+								<!-- 하루 예약 -->
+								<div class="option" id="one_day">
+									<div class="picker_wrap">
+										<input type="text" class="datepicker" readonly>
+									</div>
+									<div>
+										<div class="select_form">
+											<!-- [D] 선택한 값이 저장되는 input -->
+											<input type="hidden">
+											<button type="button">
+												<span>-</span>
+											</button>
+											<ul>
+												<li>
+													<a href="#none">1:00</a>
+												</li>
+												<li>
+													<a href="#none">24:00</a>
+												</li>
+											</ul>
+										</div>
+										<span class="txt">시,</span>
+									</div>
+									<div>
+										<div class="select_form">
+											<!-- [D] 선택한 값이 저장되는 input -->
+											<input type="hidden">
+											<button type="button">
+												<span>-</span>
+											</button>
+											<ul>
+												<li>
+													<a href="#none">1</a>
+												</li>
+												<li>
+													<a href="#none">11</a>
+												</li>
+											</ul>
+										</div>
+										<span class="txt">시간동안</span>
+									</div>
+								</div>
+								<!-- //하루 예약 -->
+
+								<!-- 정기 예약 -->
+								<div class="option" id="multi" style="display:none;">
+									<div class="picker_wrap">
+										<input type="text" class="datepicker" readonly>
+									</div>
+									<div>
+										<div class="select_form">
+											<!-- [D] 선택한 값이 저장되는 input -->
+											<input type="hidden">
+											<button type="button">
+												<span>-</span>
+											</button>
+											<ul>
+												<li>
+													<a href="#none">1:00</a>
+												</li>
+												<li>
+													<a href="#none">24:00</a>
+												</li>
+											</ul>
+										</div>
+										<span class="txt">시,</span>
+									</div>
+									<div>
+										<div class="select_form">
+											<!-- [D] 선택한 값이 저장되는 input -->
+											<input type="hidden">
+											<button type="button">
+												<span>-</span>
+											</button>
+											<ul>
+												<li>
+													<a href="#none">1</a>
+												</li>
+												<li>
+													<a href="#none">11</a>
+												</li>
+											</ul>
+										</div>
+										<span class="txt">시간동안</span>
+									</div>
+									<div>
+										<div class="select_form">
+											<!-- [D] 선택한 값이 저장되는 input -->
+											<input type="hidden">
+											<button type="button">
+												<span>-</span>
+											</button>
+											<ul>
+												<li>
+													<a href="#none">월</a>
+												</li>
+												<li>
+													<a href="#none">일</a>
+												</li>
+											</ul>
+										</div>
+										<span class="txt">요일,</span>
+									</div>
+									<div>
+										<div class="select_form">
+											<!-- [D] 선택한 값이 저장되는 input -->
+											<input type="hidden">
+											<button type="button">
+												<span>-</span>
+											</button>
+											<ul>
+												<li>
+													<a href="#none">2</a>
+												</li>
+												<li>
+													<a href="#none">48</a>
+												</li>
+											</ul>
+										</div>
+										<span class="txt">주간</span>
+									</div>
+								</div>
+								<!-- //정기 예약 -->
+
+								<!-- 기간 예약 -->
+								<div class="option" id="period" style="display:none;">
+									<div class="picker_wrap">
+										<input type="text" class="datepicker" readonly placeholder="시작일">
+									</div>
+									<div class="picker_wrap">
+										<input type="text" class="datepicker" readonly placeholder="종료일">
+									</div>
+								</div>
+								<!-- //기간 예약 -->
+
+							</div>
+							<!-- //예약 옵션 -->
+
+
+						</div>
+						<!-- //예약 시간 -->
+
+						<!-- 사용목적 -->
+						<div class="column_wrap">
+							<div class="column_tit">
+								<label for="textarea_01">사용목적<span>필수입력사항</span></label>
+							</div>
+							<textarea id="textarea_01" cols="30" rows="10"></textarea>
+						</div>
+						<!-- //사용목적 -->
+
+						<!-- 비밀번호 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="pw_01">비밀번호<span>필수입력사항</span></label>
+							</div>
+							<input type="password" id="pw_01">
+						</div>
+						<!-- //비밀번호 -->
+
+						<!-- 비밀번호 확인 -->
+						<div class="column_wrap half">
+							<div class="column_tit">
+								<label for="pw_02">비밀번호 확인<span>필수입력사항</span></label>
+							</div>
+							<input type="password" id="pw_02">
+						</div>
+						<!-- //비밀번호 확인 -->
+
+					</div>
+					<div class="btn_wrap">
+						<button type="submit">
+							<span>제출<!--수정--></span>
+						</button>
+					</div>
+					<button type="button" class="close">팝업창 닫기</button>
+				</div>
+			</div>
+			<!-- //팝업 -->
+
 			<!-- //컨텐츠 내용 -->
 
 		</div>
