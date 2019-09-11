@@ -572,7 +572,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 =========================================================*/
 
 /* 서브 페이지 컨텐츠 공통 */
-[data-sub-content] {padding:50px 0 100px;}
+[data-sub-content] {min-height:700px; padding:50px 0 100px;}
 [data-sub-content] .inner_left {padding-left:20px;}
 [data-sub-content] .inner_left .inner_left {padding-left:15px;}
 
@@ -581,6 +581,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 }
 
 @media (max-width:599px) {
+	[data-sub-content] {min-height:0;}
 	[data-sub-content] .inner_left {padding:0;}
 }
 
@@ -1150,7 +1151,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-calendar-table] tr {border-bottom:1px solid #cdc9c6;}
 [data-calendar-table] th {font-size:16px; font-weight:500; line-height:2.25em;}
 [data-calendar-table] td {position:relative; height:110px; padding:15px; padding-left:30px; text-align:left; vertical-align:top; -webkit-transition:all 0.3s; transition:all 0.3s; cursor:pointer;}
-[data-calendar-table] td:hover {background:#f9f7f5;}
+[data-calendar-table] td:hover {background:#cdc9c6;}
 [data-calendar-table] td .num {display:block; font-size:20px; line-height:30px;}
 [data-calendar-table] tr th:first-child,
 [data-calendar-table] tr td:first-child .num {font-weight:500; color:#ca0464;}
@@ -1158,7 +1159,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-calendar-table] tr td:last-child .num {font-weight:500; color:#0066be;}
 [data-calendar-table] td .msg {position:relative; padding-left:10px; font-size:13px; line-height:1.3em;}
 [data-calendar-table] td .msg:before {position:absolute; top:4px; left:0; width:6px; height:6px; border-radius:50%; background:#bba078; content:"";}
-[data-calendar-table] .detail {visibility:hidden; position:absolute; top:50%; left:0; z-index:9; width:210px; padding:0 30px; border:1px solid #000; background:#fff; -webkit-transition:all 0.3s; transition:all 0.3s; opacity:0; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
+[data-calendar-table] .detail {visibility:hidden; overflow-y:auto; position:absolute; top:50%; left:0; z-index:9; width:210px; max-height:700px; padding:0 30px; border:1px solid #000; background:#fff; -webkit-transition:all 0.3s; transition:all 0.3s; opacity:0; -webkit-transform:translateY(-50%); transform:translateY(-50%);}
 [data-calendar-table] tr td:nth-child(n+5) .detail,
 [data-calendar-table] tr td:nth-child(n+6) .detail,
 [data-calendar-table] tr td:nth-child(n+7) .detail {left:auto; right:0;}
@@ -1190,7 +1191,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 	[data-calendar-table] th {font-size:14px; line-height:2em;}
 	[data-calendar-table] td {height:90px; padding:5px;}
 	[data-calendar-table] td .num {font-size:16px;}
-	[data-calendar-table] .detail {width:150px; padding:0 10px 0 15px;}
+	[data-calendar-table] .detail {width:150px; max-height:50vh; padding:0 10px 0 15px;}
 	[data-calendar-table] .rev_list li {padding:10px 0;}
 	[data-calendar-table] .rev_list .tit {font-size:12px;}
 	[data-calendar-table] .rev_list .tit:before {top:4px;}
@@ -1222,7 +1223,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 }
 
 /* Datepicker */
-.ui-datepicker {width:200px; border:1px solid #ca0464; background:#fff;}
+.ui-datepicker {width:200px; margin-left:1px; background:#fff; outline:1px solid #ca0464;}
 .ui-datepicker th,.ui-datepicker td {padding:0; border:0; font-size:12px; line-height:20px;}
 .ui-datepicker th {border-bottom:1px solid #ca0464; background:#e6eff1; color:#ca0464;}
 .ui-datepicker td a {display:block; color:#999; -webkit-transition:all 0.3s; transition:all 0.3s;}

@@ -40,7 +40,7 @@
 						<span class="tit_wrap">
 							<img src="../img/img/img_logo_header.png" alt="포항공과대학교">
 							<span class="part_name">
-								department of<br>creative it engineering
+								department of<br> creative it engineering
 							</span>
 						</span>
 					</a>
@@ -873,24 +873,24 @@
 
 					<!-- 교과목 링크 스크립트 -->
 					<script>
-						$(function () {
-					var header, target, position;
+						$(function() {
+							var header, target, position;
 
-					$(window).on('load resize', function () {
-						header = parseInt($('header').css('height'));
-					})
+							$(window).on('load resize', function() {
+								header = parseInt($('header').css('height'));
+							})
 
-					$('.grad_table [data-table] a').on('click', function (e) {
-						e.preventDefault();
-						target = $(this).attr('href');
-						position = $(target).offset().top - header;
-						$('html,body').animate({
-							"scrollTop": position
-						}, 500);
-						return false;
-					});
-				});
-			</script>
+							$('.grad_table [data-table] a').on('click', function(e) {
+								e.preventDefault();
+								target = $(this).attr('href');
+								position = $(target).offset().top - header;
+								$('html,body').animate({
+									"scrollTop": position
+								}, 500);
+								return false;
+							});
+						});
+					</script>
 					<!-- //교과목 링크 스크립트 -->
 
 				</div>
