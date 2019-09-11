@@ -133,6 +133,10 @@ html {overflow-y:scroll; -webkit-font-smoothing:antialiased; -moz-osx-font-smoot
 .container {position:relative; max-width:1160px; margin:0 auto; padding:0 30px;}
 .container.wide {max-width:1560px;}
 .content {padding-top:115px;}
+.move_top {visibility:hidden; position:fixed; right:30px; bottom:100px; z-index:7; transition:all 0.3s; opacity:0;}
+.move_top.on {visibility:visible; bottom:110px; opacity:1;}
+.move_top button {position:relative; width:30px; height:30px; border:1px solid #ca0464; background:#fff; line-height:1; text-align:center; text-indent:-9999px; box-shadow:2px 2px 2px 2px rgba(0,0,0,0.1);}
+.move_top button:before {position:absolute; top:5px; left:50%; width:0; height:0; margin-left:-6px; border-width:6px; border-style:solid; border-color:transparent transparent #ca0464 transparent; background:none; content:'';}
 
 .ie9 {display:table; position:fixed; bottom:0; left:0; z-index:999; width:100%; min-height:100px; padding:5px 60px; background:hsl(211, 65%, 24%); font-size:14px; line-height:2em; color:#fff; text-align:center;}
 .ie9 .inner {display:table-cell; vertical-align:middle;}
@@ -145,6 +149,8 @@ html {overflow-y:scroll; -webkit-font-smoothing:antialiased; -moz-osx-font-smoot
 
 @media (max-width:599px) {
 	.container {padding:0 15px;}
+	.move_top {right:15px; bottom:50px;}
+	.move_top.on {bottom:60px;}
 }
 
 /*=========================================================

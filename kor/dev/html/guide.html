@@ -937,14 +937,14 @@
 									<div class="input_wrap">
 										<input type="text" class="mail" id="input_01">
 										<span class="at">@postech.ac.kr</span>
-										<button type="submit">보내기</button>
+										<button type="submit"><span>보내기</span></button>
 									</div>
 									<div class="column_tit sub">
 										<label for="input_02">인증키 입력<span>필수입력사항</span></label>
 									</div>
 									<div class="input_wrap">
 										<input type="text" id="input_02">
-										<button type="submit">인증확인</button>
+										<button type="submit"><span>인증확인</span></button>
 									</div>
 								</div>
 							</div>
@@ -1165,10 +1165,10 @@
 								<!-- 기간 예약 -->
 								<div class="option" id="period" style="display:none;">
 									<div class="picker_wrap">
-										<input type="text" class="datepicker" readonly placeholder="시작일">
+										<input type="text" class="datepicker date_period" id="from" readonly placeholder="시작일">
 									</div>
 									<div class="picker_wrap">
-										<input type="text" class="datepicker" readonly placeholder="종료일">
+										<input type="text" class="datepicker date_period" id="to" readonly placeholder="종료일">
 									</div>
 								</div>
 								<!-- //기간 예약 -->
@@ -1229,12 +1229,12 @@
 					<p class="guide_tit">로딩</p>
 					<button onClick="show_loading();">로딩띄우기</button>
 					<script>
-						$(function() {
-							$('[data-loading]').on('click', function() {
-								$(this).hide();
-							});
-						});
-					</script>
+						$(function () {
+					$('[data-loading]').on('click', function () {
+						$(this).hide();
+					});
+				});
+			</script>
 					<!-- //로딩 -->
 
 					<!-- //컨텐츠 내용 -->
@@ -1315,7 +1315,7 @@
 						<div class="txt_wrap">
 							<address>
 								37673 경상북도 포항시 남구 청암로 77 포항공과대학교 C5 창의IT융합공학과<br>
-						Tel. <a href="054-279-8810">+82 - 054 - 279 - 8810</a> / Fax. +82 - 054 - 279 - 8899
+						Tel. <a href="tel:054-279-8810">+82 - 054 - 279 - 8810</a> / Fax. +82 - 054 - 279 - 8899
 							</address>
 							<p class="copyright">
 								Copyright 2019 Pohang University of Science and Technology. All Rights reserved.
@@ -1330,6 +1330,9 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+	<div class="move_top">
+		<button type="button">페이지 최상단으로 이동</button>
 	</div>
 </body>
 

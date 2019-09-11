@@ -154,6 +154,21 @@ $(function () {
 				$(this).removeClass('wait-animation');
 		});
 
+		//TOP 버튼 제어
+		(scroll === 0) ? top_btn.removeClass('on') : top_btn.addClass('on');
+		
+		top_btn.find('button').on('click', function () {
+			if (top_btn_flag) return false;
+			top_btn_flag = 1;
+			$('html, body').animate({
+				scrollTop: 0
+			}, function () {
+				top_btn_flag = 0;
+				top_btn.removeClass('on');
+			});
+			return false;
+		});
+
 	});
 
 	/******************** Datepicker ********************/
@@ -166,8 +181,23 @@ $(function () {
 		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
 		dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
 		buttonText: "선택",
-		yearSuffix: "년"
+		yearSuffix: "년",
+		minDate: 0
 	});
+
+	$('.datepicker.date_period').on('change', function () {
+		day_check();
+	});
+
+	function day_check() {
+		var from = $('.date_period#from').datepicker('getDate'),
+			to = $('.date_period#to').datepicker('getDate');
+		if (from !== null && to !== null)
+			if (to - from < 0) {
+				alert('종료일은 시작일보다 이전이 될 수 없습니다.');
+				$('.date_period').val('');
+			}
+	};
 
 	/******************** 예약 시간 폼 제어 ********************/
 

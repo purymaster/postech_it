@@ -873,24 +873,24 @@
 
 					<!-- 교과목 링크 스크립트 -->
 					<script>
-						$(function() {
-							var header, target, position;
+						$(function () {
+					var header, target, position;
 
-							$(window).on('load resize', function() {
-								header = parseInt($('header').css('height'));
-							})
+					$(window).on('load resize', function () {
+						header = parseInt($('header').css('height'));
+					})
 
-							$('.grad_table [data-table] a').on('click', function(e) {
-								e.preventDefault();
-								target = $(this).attr('href');
-								position = $(target).offset().top - header;
-								$('html,body').animate({
-									"scrollTop": position
-								}, 500);
-								return false;
-							});
-						});
-					</script>
+					$('.grad_table [data-table] a').on('click', function (e) {
+						e.preventDefault();
+						target = $(this).attr('href');
+						position = $(target).offset().top - header;
+						$('html,body').animate({
+							"scrollTop": position
+						}, 500);
+						return false;
+					});
+				});
+			</script>
 					<!-- //교과목 링크 스크립트 -->
 
 				</div>
@@ -969,7 +969,7 @@
 						<div class="txt_wrap">
 							<address>
 								37673 경상북도 포항시 남구 청암로 77 포항공과대학교 C5 창의IT융합공학과<br>
-						Tel. <a href="054-279-8810">+82 - 054 - 279 - 8810</a> / Fax. +82 - 054 - 279 - 8899
+						Tel. <a href="tel:054-279-8810">+82 - 054 - 279 - 8810</a> / Fax. +82 - 054 - 279 - 8899
 							</address>
 							<p class="copyright">
 								Copyright 2019 Pohang University of Science and Technology. All Rights reserved.
@@ -984,6 +984,9 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+	<div class="move_top">
+		<button type="button">페이지 최상단으로 이동</button>
 	</div>
 </body>
 
