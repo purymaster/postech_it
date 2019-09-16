@@ -243,8 +243,8 @@ header .search button.on + input[type="text"] {-webkit-transform:scaleX(1);trans
 	header nav .main-menu > li:last-child {border:0;}
 	header nav .main-menu > li:before,
 	header nav .main-menu > li:after {position:absolute; top:1em; right:0; width:10px; height:2px; background:#ca0464; content:"";}
-	header nav .main-menu > li:after {-webkit-transform:rotate(90deg);transform:rotate(90deg); -webkit-transition:all 0.3s; transition:all 0.3s;}
-	header nav .main-menu > li.on:after {-webkit-transform:rotate(0);transform:rotate(0);}
+	header nav .main-menu > li:after {-webkit-transform:rotate(90deg) scaleX(1);transform:rotate(90deg) scaleX(1); -webkit-transition:all 0.3s; transition:all 0.3s;}
+	header nav .main-menu > li.on:after {-webkit-transform:rotate(90deg) scaleX(0);transform:rotate(90deg) scaleX(0);}
 	header nav .main-menu > li > a {font-size:16px; line-height:2em; padding:0;}
 	header nav .main-menu > li > a:before {display:none !important;}
 	header nav .main-menu > li:hover > a:before {display:none;}
@@ -1148,10 +1148,10 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-calendar] .calendar_info .ctr .next:before {-webkit-transform:rotate(45deg);transform:rotate(45deg);}
 [data-calendar] .calendar_info .ctr .next:after {-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
 [data-calendar-table] table {border:0;}
-[data-calendar-table] tr {border-bottom:1px solid #cdc9c6;}
+[data-calendar-table] tr {border-bottom:1px solid #f9f7f5;}
 [data-calendar-table] th {font-size:16px; font-weight:500; line-height:2.25em;}
 [data-calendar-table] td {position:relative; height:110px; padding:15px; padding-left:30px; text-align:left; vertical-align:top; -webkit-transition:all 0.3s; transition:all 0.3s; cursor:pointer;}
-[data-calendar-table] td:hover {background:#cdc9c6;}
+[data-calendar-table] td:hover {background:#f9f7f5;}
 [data-calendar-table] td .num {display:block; font-size:20px; line-height:30px;}
 [data-calendar-table] tr th:first-child,
 [data-calendar-table] tr td:first-child .num {font-weight:500; color:#ca0464;}
