@@ -4,7 +4,9 @@
 		<div class="container">
 			<ol data-breadcrumb>
 				<li class="home">홈</li>
+				@@if(!context.no_sub){
 				<li>@@sub_menu</li>
+				}
 			</ol>
 			<h2 data-animation="fadeInUp">@@title</h2>
 		</div>

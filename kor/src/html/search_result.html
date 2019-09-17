@@ -1,0 +1,51 @@
+@@include('header.html')
+<div class="content sub_page">
+
+	@@include('sub_visual.html',{
+	"title" : "검색결과",
+	"type" : "type1",
+	"context" : {
+	"no_sub" : true
+	}
+	})
+
+	<!-- 서브 페이지 컨텐츠 -->
+	<div class="" data-sub-content>
+		<div class="container">
+
+			<!-- 컨텐츠 내용 -->
+			<div data-content-box>
+				<div data-search-result>
+					<p class="result_tit">
+						입력하신
+						<span
+							class="keyword">긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용긴내용</span>
+						관련
+						<span class="cnt">99999999개</span>
+						의 정보가 검색되었습니다.
+					</p>
+					<ul class="result_list">
+						<li>
+							<a href="#">
+								<img src="https://picsum.photos/id/237/220/160" alt="">
+								<div class="txt_wrap">
+									<p class="tit">
+										<span class="cate">[공지사항]</span>
+										동해물과 백두산이 동해물과 백두산이 동해물과 백두산이 동해물과 백두산이 동해물과 백두산이 동해물과 백두산이 동해물과 백두산이
+									</p>
+									<span class="detail">자세히보기</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+					@@include('paging.html')
+				</div>
+			</div>
+			<!-- //컨텐츠 내용 -->
+
+		</div>
+	</div>
+	<!-- //서브 페이지 컨텐츠 -->
+
+</div>
+@@include('footer.html')
