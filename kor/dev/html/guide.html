@@ -501,6 +501,20 @@
 									<div class="role">
 										연구비 집행 정산관리, 원장 비서
 									</div>
+									<dl>
+										<div>
+											<dt class="email">email</dt>
+											<dd>
+												<a href="mailto:email@email.com">email@email.com</a>
+											</dd>
+										</div>
+										<div>
+											<dt class="phone">phone number</dt>
+											<dd>
+												<a href="tel:999-999-9999">999-999-9999</a>
+											</dd>
+										</div>
+									</dl>
 								</div>
 							</li>
 						</ul>
@@ -1076,11 +1090,12 @@
 							<!-- 예약 옵션 -->
 							<div class="rev_opt">
 
+								<div class="picker_wrap">
+									<input type="text" class="datepicker date_period" id="from" readonly placeholder="시작일">
+								</div>
+
 								<!-- 하루 예약 -->
 								<div class="option" id="one_day">
-									<div class="picker_wrap">
-										<input type="text" class="datepicker" readonly>
-									</div>
 									<div>
 										<div class="select_form">
 											<!-- [D] 선택한 값이 저장되는 input -->
@@ -1122,9 +1137,6 @@
 
 								<!-- 정기 예약 -->
 								<div class="option" id="multi" style="display:none;">
-									<div class="picker_wrap">
-										<input type="text" class="datepicker" readonly>
-									</div>
 									<div>
 										<div class="select_form">
 											<!-- [D] 선택한 값이 저장되는 input -->
@@ -1202,9 +1214,6 @@
 
 								<!-- 기간 예약 -->
 								<div class="option" id="period" style="display:none;">
-									<div class="picker_wrap">
-										<input type="text" class="datepicker date_period" id="from" readonly placeholder="시작일">
-									</div>
 									<div class="picker_wrap">
 										<input type="text" class="datepicker date_period" id="to" readonly placeholder="종료일">
 									</div>

@@ -808,7 +808,7 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 
 /* 직원 리스트 */
 [data-worker] ul {overflow:hidden; margin:-7px;}
-[data-worker] ul li {float:left; width:25%; padding:7px;}
+[data-worker] ul li {float:left; width:50%; padding:7px;}
 [data-worker] .info_wrap {padding:20px; padding-bottom:15px; border:1px solid #e8e5e2;}
 [data-worker] .info {overflow:hidden;}
 [data-worker] .info img {float:left; width:58px; height:68px; border:1px solid #e8e5e2;}
@@ -817,15 +817,28 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 [data-worker] .info .profile .name:before {position:absolute; bottom:0; left:0; width:30px; height:1px; background:#ca0464; content:"";}
 [data-worker] .info .profile .name small {margin-left:3px; font-size:12px; font-weight:400; color:#999;}
 [data-worker] .role {margin-top:15px; font-size:14px; line-height:1.5em;}
+[data-worker] dl {margin-top:5px;}
+[data-worker] dl > div {overflow:hidden;}
+[data-worker] dt,
+[data-worker] dd {float:left; position:relative; padding:0.3em 0; font-size:14px; line-height:1.5em; text-align:left;}
+[data-worker] dt {width:160px; padding-left:30px; font-weight:500; color:#a98147; text-transform:capitalize;}
+[data-worker] dt:before {position:absolute; top:50%; left:0; width:15px; height:15px; background:red; transform:translateY(-50%); content:"";}
+[data-worker] dd {width:calc(100% - 160px);}
+[data-worker] dd a {color:inherit;}
 
 @media (max-width:1024px) {
-	[data-worker] ul li {width:50%;}
+	[data-worker] ul li {width:100%;}
 	[data-worker] .info .profile {padding-top:0;}
 	[data-worker] .info .profile .name {font-size:18px;}
+	[data-worker] dt,
+	[data-worker] dd {padding:0.15em 0;}
+	[data-worker] dt {padding-left:30px;}
 }
 
 @media (max-width:599px) {
 	[data-worker] ul li {width:100%;}
+	[data-worker] dt {width:120px; padding-left:20px;}
+	[data-worker] dd {width:calc(100% - 120px);}
 }
 
 /* 버튼 */
@@ -1342,6 +1355,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-reservation] .column_wrap .picker_wrap {display:inline-block; position:relative; width:130px;}
 [data-reservation] .column_wrap .picker_wrap:before {position:absolute; top:12px; left:15px; width:15px; height:14px; background:red; content:"";}
 [data-reservation] .column_wrap .datepicker {padding-left:40px;}
+[data-reservation] .column_wrap .date_period {margin-bottom:5px;}
 [data-reservation] .column_tit {margin-bottom:5px;}
 [data-reservation] .column_tit label {display:inline-block; position:relative; font-size:16px; font-weight:500; line-height:1.85em;}
 [data-reservation] .column_tit label span {position:absolute; top:0; right:0; text-indent:-9999px;}
@@ -1359,7 +1373,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-reservation] .email_form .input_wrap button {width:30%; margin-left:10px; border:1px solid #aaa; font-size:13px; transition:all 0.3s;}
 [data-reservation] .email_form .input_wrap button:hover {color:#ca0464; border-color:#ca0464;}
 [data-reservation] .rev_opt {margin-top:10px;}
-[data-reservation] .rev_opt .option {font-size:0;}
+[data-reservation] .rev_opt .option {display:inline-block; font-size:0; vertical-align:top;}
 [data-reservation] .rev_opt .option > div,
 [data-reservation] .rev_opt .option .txt {display:inline-block; vertical-align:top;}
 [data-reservation] .rev_opt .option > div {margin-bottom:5px; margin-right:5px;}
@@ -1369,6 +1383,9 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 @media (max-width:599px) {
 	[data-reservation] .column_wrap.half {width:100%;}
 }
+
+/* 대학원 - 교과목 일람표 */
+.grad_table [data-table] a:hover {font-weight:700; color:#ca0464; text-decoration:underline;}
 
 /*=========================================================
 10. animate

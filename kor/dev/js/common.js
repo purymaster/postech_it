@@ -208,7 +208,7 @@ $(function() {
         $('[data-reservation] .option').find('input[type="text"],input[type="hidden"]').val('');
         $('[data-reservation] .option').find('.select_form button span').text('-');
         $('[data-reservation] .option').hide();
-        $(time_opt).show();
+        $(time_opt).css('display', 'inline-block');
     });
 
     /******************** 교수 리스트 제어 ********************/
