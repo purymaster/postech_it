@@ -141,7 +141,7 @@ html {overflow-y:scroll; -webkit-font-smoothing:antialiased; -moz-osx-font-smoot
 .ie9 {display:table; position:fixed; bottom:0; left:0; z-index:999; width:100%; min-height:100px; padding:5px 60px; background:hsl(211, 65%, 24%); font-size:14px; line-height:2em; color:#fff; text-align:center;}
 .ie9 .inner {display:table-cell; vertical-align:middle;}
 .ie9 .inner a {font-size:16px; font-weight:700; color:#fff;}
-.ie9 button {overflow:hidden; position:absolute; top:20px; right:20px; width:30px; height:30px; /*background:url(../../images/common/img_close_button.png);*/ background:red; text-indent:-9999px;}
+.ie9 button {overflow:hidden; position:absolute; top:20px; right:20px; width:30px; height:30px; background:url(../img/sprite/sprite.png); background-position:-74px -196px; text-indent:-9999px;}
 
 @media (max-width:1024px) {
 	.content {padding-top:50px;}
@@ -308,7 +308,10 @@ footer .info .txt_wrap .copyright {margin-top:5px; font-size:11px; color:#999;}
 footer .info .sns {position:absolute; top:25px; right:0;}
 footer .info .sns li {float:left; width:20px; margin-left:10px;}
 footer .info .sns li:first-child {margin:0;}
-footer .info .sns li a {display:block; background:red; line-height:20px; text-indent:-9999px;}
+footer .info .sns li a {display:block; background:url(../img/sprite/sprite.png); background-position-y:-5px; background-size:150px; line-height:20px; text-indent:-9999px;}
+footer .info .sns li:nth-child(1) a {background-position-x:-5px;}
+footer .info .sns li:nth-child(2) a {background-position-x:-31px;}
+footer .info .sns li:nth-child(3) a {background-position-x:-55px;}
 
 @media (max-width:1024px) {
 	footer:before {display:none;}
@@ -600,7 +603,7 @@ footer .info .sns li a {display:block; background:red; line-height:20px; text-in
 [data-sub-visual] [data-breadcrumb] li:before {position:absolute; top:7px; left:10px; width:4px; height:4px; border-radius:50%; background:#fff; content:"";}
 [data-sub-visual] [data-breadcrumb] .home {position:relative; width:14px; padding:0; text-indent:-9999px;}
 [data-sub-visual] [data-breadcrumb] .home:before {display:none;}
-[data-sub-visual] [data-breadcrumb] .home:after {position:absolute; top:50%; left:0; width:14px; height:13px; margin-top:-8px; background:red; content:"";}
+[data-sub-visual] [data-breadcrumb] .home:after {position:absolute; top:50%; left:0; width:14px; height:13px; margin-top:-8px; background:url(../img/sprite/sprite.png); background-size:150px; background-position:-24px -80px; content:"";}
 [data-sub-visual] h2 {position:relative; font-size:50px; font-weight:900; line-height:1.8em;}
 [data-sub-visual] h2:before {position:absolute; top:0; left:50%; width:160px; height:1px; margin-left:-80px; background:#fff; opacity:0.6; content:"";}
 
@@ -771,7 +774,13 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 [data-profile] .info .profile dt,
 [data-profile] .info .profile dd {float:left; position:relative; padding:0.3em 0; font-size:14px; line-height:1.5em; text-align:left;}
 [data-profile] .info .profile dt {width:160px; padding-left:30px; font-weight:500; color:#a98147; text-transform:capitalize;}
-[data-profile] .info .profile dt:before {position:absolute; top:50%; left:0; width:15px; height:15px; background:red; transform:translateY(-50%); content:"";}
+
+
+[data-profile] .info .profile dt:before {position:absolute; top:50%; left:0; width:15px; height:16px; background:url(../img/sprite/sprite.png); background-size:150px; background-position-y:-30px; transform:translateY(-50%); content:"";}
+[data-profile] .info .profile .research:before {margin-top:1px; background-position-x:-5px;}
+[data-profile] .info .profile .email:before {margin-top:2px; background-position-x:-25px;}
+[data-profile] .info .profile .homepage:before {margin-top:3px; background-position-x:-43px;}
+[data-profile] .info .profile .phone:before {margin-left:2px; background-position-x:-61px;}
 [data-profile] .info .profile dd {width:calc(100% - 160px);}
 [data-profile] .info .profile dd a {color:inherit;}
 [data-profile] .work {display:none; padding:40px; border:1px solid #e8e5e2; border-top:0; background:#f9f7f5; transition:all 0.3s;}
@@ -822,7 +831,9 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 [data-worker] dt,
 [data-worker] dd {float:left; position:relative; padding:0.3em 0; font-size:14px; line-height:1.5em; text-align:left;}
 [data-worker] dt {width:160px; padding-left:30px; font-weight:500; color:#a98147; text-transform:capitalize;}
-[data-worker] dt:before {position:absolute; top:50%; left:0; width:15px; height:15px; background:red; transform:translateY(-50%); content:"";}
+[data-worker] dt:before {position:absolute; top:50%; left:0; width:15px; height:16px; background:url(../img/sprite/sprite.png); background-position-y:-30px; background-size:150px; transform:translateY(-50%); content:"";}
+[data-worker] .email:before {margin-top:2px; background-position-x:-25px;}
+[data-worker] .phone:before {margin-left:2px; background-position-x:-61px;}
 [data-worker] dd {width:calc(100% - 160px);}
 [data-worker] dd a {color:inherit;}
 
@@ -914,15 +925,19 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-board-list] .tit h3 a:hover {color:#ca0464;}
 [data-board-list] .tit h3 a .cate {margin-right:10px; font-size:20px; line-height:1.3em; color:#a98147;}
 [data-board-list] .tit .date {display:inline-block; position:relative; padding-left:20px; font-size:12px; line-height:20px; color:#999; letter-spacing:0;}
-[data-board-list] .tit .date:before {position:absolute; top:50%; left:0; width:12px; height:13px; margin-top:-7px; background:red; content:"";}
+[data-board-list] .tit .date:before,
+[data-board-list] .tit .date:after {position:absolute; content:"";} 
+[data-board-list] .tit .date:before {top:2px; left:0; width:12px; height:12px; border:1px solid #999; border-radius:50%;} 
+[data-board-list] .tit .date:after {top:5px; left:6px; width:4px; height:4px; border-bottom:1px solid #999; border-left:1px solid #999;}
 [data-board-list] .misc .misc_wrap ul {float:right;}
 [data-board-list] .misc .misc_wrap ul:after {display:block; clear:both; content:"";}
 [data-board-list] .misc .misc_wrap ul li {float:left;}
 [data-board-list] .misc .misc_wrap ul li.view {position:relative; letter-spacing:0;}
 [data-board-list] .misc .misc_wrap ul li.view .item {display:block; position:relative; padding-left:34px; font-size:14px; line-height:24px; color:#999; white-space:nowrap;}
-[data-board-list] .misc .misc_wrap ul li.view .item:before {position:absolute; top:0; left:0; width:22px; height:24px; background:red; content:"";}
+[data-board-list] .misc .misc_wrap ul li.view .item:before {position:absolute; top:0; left:0; width:22px; height:24px; background:url(../img/sprite/sprite.png); background-position:-5px -51px; background-size:150px; content:"";}
 [data-board-list] .misc .misc_wrap ul li.file {position:relative; margin-right:20px; padding-right:20px;}
-[data-board-list] .misc .misc_wrap ul li.file .item {display:block; width:23px; height:24px; background:red; text-align:center; text-indent:-9999px;}
+[data-board-list] .misc .misc_wrap ul li.file .item {display:block; width:23px; height:24px; background:url(../img/sprite/sprite.png); background-position:-32px -51px; background-size:150px; text-align:center; text-indent:-9999px;}
+[data-board-list] .misc .misc_wrap ul li.file .item:hover {background-position-x:-60px;}
 [data-board-list] .misc .misc_wrap ul li.file:before {position:absolute; top:50%; right:0; width:1px; height:10px; margin-top:-5px; background:#d5d5d5; content:"";}
 
 @media (max-width:1024px) {
@@ -1000,23 +1015,27 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-board-view] .view_header .info .misc {display:table-cell; width:150px; vertical-align:middle;}
 [data-board-view] .view_header .info .tit h3 {margin-bottom:10px; font-size:20px; font-weight:500; line-height:1.3em; color:#333;}
 [data-board-view] .view_header .info .tit .date {display:inline-block; position:relative; padding-left:20px; font-size:12px; line-height:18px; color:#999; letter-spacing:0;}
-[data-board-view] .view_header .info .tit .date:before {position:absolute; top:50%; left:0; width:12px; height:13px; margin-top:-7px; background:red; content:"";}
+[data-board-view] .view_header .info .tit .date:before,
+[data-board-view] .view_header .info .tit .date:after {position:absolute; content:"";}
+[data-board-view] .view_header .info .tit .date:before {top:0; left:0; width:12px; height:12px; border:1px solid #999; border-radius:50%;}
+[data-board-view] .view_header .info .tit .date:after {top:3px; left:6px; width:4px; height:4px; border-bottom:1px solid #999; border-left:1px solid #999;}
 [data-board-view] .view_header .info .misc .misc_wrap {float:right;}
 [data-board-view] .view_header .info .misc .misc_wrap:after {display:table; clear:both; content:"";}
 [data-board-view] .view_header .info .misc ul li {float:left;}
 [data-board-view] .view_header .info .misc ul li.view .item {display:block; position:relative; padding-left:34px; font-size:14px; line-height:24px; color:#999; letter-spacing:0; white-space:nowrap;}
-[data-board-view] .view_header .info .misc ul li.view .item:before {position:absolute; top:0; left:0; width:22px; height:24px; background:red; content:"";}
+[data-board-view] .view_header .info .misc ul li.view .item:before {position:absolute; top:0; left:0; width:22px; height:24px; background:url(../img/sprite/sprite.png); background-position:-5px -51px; background-size:150px; content:"";}
 [data-board-view] .view_header .info .misc ul li.file {position:relative; margin-left:20px; padding-left:20px;}
 [data-board-view] .view_header .info .misc ul li.file:after {position:absolute; top:50%; left:0; width:1px; height:10px; margin-top:-5px; background:#d5d5d5; content:"";}
-[data-board-view] .view_header .info .misc ul li.file .item {display:block; width:23px; height:24px; background:red; text-align:center; text-indent:-9999px;}
-[data-board-view] .view_header .info .misc ul li.file .item:hover,[data-board-view] .view_header .info .misc ul li.file.active .item {background:blue;}
+[data-board-view] .view_header .info .misc ul li.file .item {display:block; width:23px; height:24px; background:url(../img/sprite/sprite.png); background-position:-32px -51px; background-size:150px; text-align:center; text-indent:-9999px;}
+[data-board-view] .view_header .info .misc ul li.file .item:hover,[data-board-view] .view_header .info .misc ul li.file.active .item {background-position-x:-60px;}
 [data-board-view] .view_content {clear:both; padding:25px 30px;}
 [data-board-view] .file_upload {clear:both; padding:20px;}
 [data-board-view] .file_upload li {clear:both; position:relative; margin-top:5px; font-size:0; line-height:0;}
 [data-board-view] .file_upload li:first-child {margin-top:0;}
 [data-board-view] .file_upload li a {display:inline-block; position:relative; padding-left:23px; font-size:12px; line-height:17px; color:#999; word-break:break-all; transition:all 0.3s;}
 [data-board-view] .file_upload li a:hover {color:#c61065;}
-[data-board-view] .file_upload li a:before {position:absolute; top:0; left:0; width:15px; height:17px; background:red; content:"";}
+[data-board-view] .file_upload li a:before {position:absolute; top:0; left:0; width:15px; height:17px; background:url(../img/sprite/sprite.png); background-position:-88px -51px; background-size:150px; content:"";}
+[data-board-view] .file_upload li a:hover:before {background-position-x:-108px;}
 [data-board-view] .single_paging {clear:both; margin-top:18px; border-top:solid 1px #e8e5e2;}
 [data-board-view] .single_paging li {clear:both; position:relative; border-bottom:solid 1px #e8e5e2;}
 [data-board-view] .single_paging li:before {position:absolute; top:50%; left:23px; width:8px; height:8px; border-top:2px solid #999; border-left:2px solid #999; transform:rotate(45deg); transition:all 0.3s; content:""; margin-top:-4px}
@@ -1082,8 +1101,11 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-board-gallery] ul li .info_wrap .view {display:inline-block; position:relative; padding-left:20px; font-size:12px; line-height:14px; color:#999; letter-spacing:0;}
 [data-board-gallery] ul li .info_wrap .date {float:left;}
 [data-board-gallery] ul li .info_wrap .view {float:right;}
-[data-board-gallery] ul li .info_wrap .date:before {position:absolute; top:0; left:0; width:12px; height:13px; background:red; content:"";}
-[data-board-gallery] ul li .info_wrap .view:before {position:absolute; top:0; left:0; width:12px; height:14px; background:red; content:"";}
+[data-board-gallery] ul li .info_wrap .date:before,
+[data-board-gallery] ul li .info_wrap .date:after {position:absolute; content:"";}
+[data-board-gallery] ul li .info_wrap .date:before {top:0; left:0; width:12px; height:12px; border:1px solid #999; border-radius:50%;}
+[data-board-gallery] ul li .info_wrap .date:after {top:3px; left:6px; width:4px; height:4px; border-bottom:1px solid #999; border-left:1px solid #999;}
+[data-board-gallery] ul li .info_wrap .view:before {position:absolute; top:-1px; left:0; width:15px; height:16px; background:url(../img/sprite/sprite.png); background-position:-128px -51px; background-size:150px; content:"";}
 
 @media (max-width:1024px) {
 	[data-board-gallery] ul li {width:50%;}
@@ -1326,7 +1348,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 /* 찾아오시는길 */
 .map .map_wrap iframe {display:block; width:100%; height:380px;}
 .map .map_wrap .address {position:relative; margin-top:15px; padding-left:40px; font-size:20px; font-weight:500; line-height:26px;}
-.map .map_wrap .address:before {position:absolute; top:0; left:0; width:27px; height:26px; background:red; content:"";}
+.map .map_wrap .address:before {position:absolute; top:0; left:0; width:27px; height:26px; background:url(../img/sprite/sprite.png); background-size:150px; background-position:-5px -98px; content:"";}
 .map [data-grid] {margin:0;}
 .map [data-grid] .grid_cont {padding-top:8px;}
 
@@ -1353,7 +1375,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-reservation] .column_wrap textarea {width:100%;}
 [data-reservation] .column_wrap textarea {height:120px;}
 [data-reservation] .column_wrap .picker_wrap {display:inline-block; position:relative; width:130px;}
-[data-reservation] .column_wrap .picker_wrap:before {position:absolute; top:12px; left:15px; width:15px; height:14px; background:red; content:"";}
+[data-reservation] .column_wrap .picker_wrap:before {position:absolute; top:12px; left:15px; width:14px; height:13px; background:url(../img/sprite/sprite.png); background-size:150px; background-position:-5px -80px; content:"";}
 [data-reservation] .column_wrap .datepicker {padding-left:40px;}
 [data-reservation] .column_wrap .date_period {margin-bottom:5px;}
 [data-reservation] .column_tit {margin-bottom:5px;}
