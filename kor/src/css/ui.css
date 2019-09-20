@@ -1493,8 +1493,18 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 .grad_table [data-table] a:hover {font-weight:700; color:#ca0464; text-decoration:underline;}
 
 /* 사이트맵 */
-
-
+.sitemap .depth1 > li {  overflow: hidden;}
+.sitemap .depth1 > li > a { display: block;  font-size: 20px; color: #333; line-height: 1.5em; font-weight: 700; float: left;  width: 170px; border-top: 1px solid #ca0464; padding: 25px 0 0 20px;} 
+.sitemap .depth2 {border-top: 1px solid  #e8e5e2; padding: 25px 0 35px 170px; }
+.sitemap .depth2:after { content:""; display: table; clear: both;}
+.sitemap .depth2 > li {float: left; width: 20%; padding: 5px 0;}
+.sitemap .depth2 > li > a { display: block; font-size: 16px; color:#333;  line-height: 1.3em; font-weight: 500;} 
+/* .sitemap .depth1 { }
+.sitemap .depth1:after { content: ""; display: table; clear: both; }
+.sitemap .depth1 > li a { float: left; font-size: 20px; color: #333; line-height: 1.5em;    }
+.sitemap .depth2 { overflow: hidden; li }
+.sitemap .depth2 li { display: inline-block; width: 20%; }
+.sitemap .depth2 li a { } */
 /*=========================================================
 10. animate
 =========================================================*/
