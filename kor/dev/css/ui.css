@@ -1363,6 +1363,17 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 	.map .map_wrap .address {font-size:16px;}
 }
 
+/* 학사일정 */
+.schedule [data-table] th {background:#f9f7f5; font-size:20px; font-weight:500; line-height:1.5em; color:#a98147;}
+
+@media (max-width:1024px) {
+	.schedule [data-table] th {font-size:16px;}
+}
+
+@media (max-width:599px) {
+	.schedule [data-table] th {font-size:12px;}
+}
+
 /* 예약 */
 [data-reservation] {margin:0 -10px;}
 [data-reservation]:after {display:block; clear:both; content:"";}
