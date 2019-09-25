@@ -1,0 +1,74 @@
+@@include('header.html')
+<div class="content sub_page">
+
+	@@include('sub_visual.html',{
+	"title" : "대학원",
+	"type" : "type3",
+	"sub_menu" : "교육"
+	})
+
+	<!-- 서브 페이지 컨텐츠 -->
+	<div class="" data-sub-content>
+		<div class="container">
+
+			@@include('../inc/tab.html',{
+			"has_tab" : true,
+			"tab_list" : ["개요","교과목 일람표","학위","Q.E","학생지원","대학원 프로그램","졸업"],
+			"type" : "type7"
+			})
+
+			<!-- 컨텐츠 내용 -->
+			<div data-content-box>
+				<h3 class="sub_title">대학원 학위 논문 작성</h3>
+				<ul class="type1 major" data-list>
+					<li>
+						가. 학위논문 작성
+						<ul data-list>
+							<li>학위논문은 심사용 논문과 제출용 논문으로 구분하며, 그 작성요령 및 제출기한은 다음과 같다.</li>
+						</ul>
+					</li>
+					<li>
+						나. 심사용 논문 작성 요령
+						<ul data-list>
+							<li>① 영문으로 작성하며 본문 분량에는 제한을 두지 않는다.</li>
+							<li>② 워드프로세서로 작성한다.</li>
+							<li>③ 용지는 백지를 사용하고, 크기는 4x6배판(182mmx257mm)으로 한다.</li>
+							<li>④ 논문초록(Abstract)(참조5)은 1,000단어 이내의 영문으로 작성하며, 본문이 외국어인 경우에는 국문요약(Summary)을 200자 원고지 10매
+								정도로 작성하여 첨부한다.</li>
+							<li>⑤ 작성된 논문은 석사과정인 경우 3부, 박사과정인 경우 5부를 해당 논문심사위원회에 제출한다.</li>
+						</ul>
+					</li>
+					<li>
+						다. 제출기간
+						<ul data-list>
+							<li>
+								1) 논문심사 15일 전까지 심사위원 전원에게 심사용 논문을 제출한다.
+								<ul data-list>
+									<li>① 영문으로 작성하며 본문 분량에는 제한을 두지 않는다.</li>
+									<li>② 워드프로세서로 작성한다.</li>
+									<li>③ 용지는 백지를 사용하고, 크기는 4x6배판(182mmx257mm)으로 한다.</li>
+									<li>④ 논문초록(Abstract)(참조5)은 1,000단어 이내의 영문으로 작성하며, 본문이 외국어인 경우에는 국문요약(Summary)을 200자
+										원고지 10매 정도로 작성하여 첨부한다.</li>
+									<li>
+										⑤ 작성된 논문은 석사과정인 경우 3부, 박사과정인 경우 5부를 해당 논문심사위원회에 제출한다.
+										<div class="inner_left">
+											<ul class="type2" data-list>
+												<li>석&middot;박사학위 논문심사 및 종합시험 결과보고서 1부(양식2)</li>
+												<li>석&middot;박사학위 논문심사 요지 1부(양식3)</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- //컨텐츠 내용 -->
+
+		</div>
+	</div>
+	<!-- //서브 페이지 컨텐츠 -->
+
+</div>
+@@include('footer.html')

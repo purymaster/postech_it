@@ -1,0 +1,89 @@
+@@include('header.html')
+<div class="content sub_page">
+
+	@@include('sub_visual.html',{
+	"title" : "대학원",
+	"type" : "type3",
+	"sub_menu" : "교육"
+	})
+
+	<!-- 서브 페이지 컨텐츠 -->
+	<div class="" data-sub-content>
+		<div class="container">
+
+			@@include('../inc/tab.html',{
+			"has_tab" : true,
+			"tab_list" : ["개요","교과목 일람표","학위","Q.E","학생지원","대학원 프로그램","졸업"],
+			"type" : "type7"
+			})
+
+			<!-- 컨텐츠 내용 -->
+			<div data-content-box>
+				<h3 class="sub_title">학생지원</h3>
+				<ul class="type1 major" data-list>
+					<li>등록금 및 생활비</li>
+					<li>연구활동 지원비</li>
+					<li>창의과제 공모 선정 시 연구비 지원</li>
+					<li>
+						아파트형 기숙사 제공
+						<ul class="type3" data-list>
+							<li>3인 1실 사용</li>
+							<li>침실 3개, 거실, 부엌, 베란다, 화장실 구조로 개별 난방 시스템 도입 </li>
+							<li>네트워크가 연결되어, 기숙사에서도 인터넷을 자유롭게 이용 가능</li>
+							<li>C5 건물 앞에 위치하고 있어 최상의 정주 요건을 갖추고 있음</li>
+						</ul>
+					</li>
+				</ul>
+				<div data-gallery>
+					<ul>
+						<li>
+							<figure>
+								<img src="../img/photo/grad_support/photo_01.jpg" alt="">
+								<figcaption>
+									<p>
+										기숙사 전경
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="../img/photo/grad_support/photo_02.jpg" alt="">
+								<figcaption>
+									<p>
+										침실
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="../img/photo/grad_support/photo_03.jpg" alt="">
+								<figcaption>
+									<p>
+										주방
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<img src="../img/photo/grad_support/photo_04.jpg" alt="">
+								<figcaption>
+									<p>
+										거실
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //컨텐츠 내용 -->
+
+		</div>
+	</div>
+	<!-- //서브 페이지 컨텐츠 -->
+
+</div>
+@@include('footer.html')
