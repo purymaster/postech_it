@@ -1308,17 +1308,16 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 .greeting .cont_top .text_box p {font-size: 22px; line-height: 1.5em; color: #333; }
 .greeting .cont_bottom { padding-top: 155px; overflow: hidden;margin-bottom: 40px;}
 .greeting .cont_bottom .cont_img { float: left; background-image: url(../img/bg/bg_greeting_02.png); background-repeat: no-repeat; width: 40%; height: 638px; background-size: contain;}
-.greeting .cont_bottom .cont_text { position: relative; width: calc(60% - 40px); float: right;}
-.greeting .cont_bottom .cont_text:before { content: ""; position: absolute; width: 1px; height: 103px; background-color: #d5d5d5; left: 2px; top: -143px;}
-.greeting .cont_bottom .cont_text:after {content:""; position: absolute; width: 5px; height: 5px; background-color: #d5d5d5; left: 0; top: -143px; border-radius: 50px;}
-.greeting .cont_bottom .cont_text .cont_tit { font-size: 24px; line-height: 1.4em; color: #333; font-weight: 700; margin-bottom: 25px;}
-.greeting .cont_bottom .cont_text .text { font-size: 14px; line-height: 1.5em; color: #555; margin-bottom: 20px; }
-.greeting .cont_bottom .cont_text .text:last-child { margin-bottom: 0; }
-.greeting .sing_box { float: right;}
-.greeting .sing_box .sing_txt { float: left; padding: 30px 0;}
-.greeting .sing_box .sing_txt .txt{ font-size:16px; line-height: 1.5em; color:#555;  font-weight: 500;}
-.greeting .sing_box img { text-align: right; background-size: 144px 48px; width: 144px; height: 48px; margin-left: 20px;}
-
+.greeting .cont_bottom .cont_text {float:right; position:relative; width:calc(60% - 40px);}
+.greeting .cont_bottom .cont_text:before {position:absolute; top:-143px; left:2px; width:1px; height:103px; background-color:#d5d5d5; content:"";}
+.greeting .cont_bottom .cont_text:after {position:absolute; top:-143px; left:0; width:5px; height:5px; border-radius:50px; background-color:#d5d5d5; content:"";}
+.greeting .cont_bottom .cont_text .cont_tit {margin-bottom:25px; font-size:24px; font-weight:700; line-height:1.4em; color:#333;}
+.greeting .cont_bottom .cont_text .text {margin-bottom:20px; font-size:14px; line-height:1.5em; color:#555;}
+.greeting .cont_bottom .cont_text .text:last-child {margin-bottom:0;}
+.greeting .sign_box {float:right;}
+.greeting .sign_box .sign_txt {float:left; padding:30px 0;}
+.greeting .sign_box .sign_txt .txt {font-size:16px; font-weight:500; line-height:1.5em; color:#555;}
+.greeting .sign_box img {width:144px; height:48px; margin-left:20px; background-size:144px 48px; text-align:right;}
 
 @media (max-width:1024px) { 
     .greeting .cont_top { height: auto; margin-bottom: 30px; margin-top: 0;}
@@ -1334,9 +1333,9 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
     .greeting .cont_bottom .cont_text .cont_tit { font-size: 20px;} 
     .greeting .cont_bottom .cont_text .cont_tit br { display: none;}
 	.greeting .cont_bottom .cont_text .text { font-size: 12px;}
-	.greeting .sing_box .sing_txt { padding: 5px 0; }
-    .greeting .sing_box .sing_txt .txt { font-size: 12px; } 
-    .greeting .sing_box img {  background-size: 72px 24px; width: 72px; height: 24px;}
+	.greeting .sign_box .sign_txt { padding: 5px 0; }
+    .greeting .sign_box .sign_txt .txt { font-size: 12px; } 
+    .greeting .sign_box img {  background-size: 72px 24px; width: 72px; height: 24px;}
 }
 
 @media (max-width:599px) {
@@ -1382,7 +1381,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 }
 
 /* 조직도 */
-.organ .chart {padding-top:47.28%; background:url(../img/bg/bg_organization.png) no-repeat top center; background-size:contain;}
+.organ .chart {padding-top:55.45%; background:url(../img/bg/bg_organization.png) no-repeat top center; background-size:contain;}
 .organ .chart ul {position:absolute; left:-9999px; top:-9999px; width:1px; height:1px;}
 
 @media (max-width:599px) {
@@ -1393,6 +1392,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 	.organ .chart ul .person {color:#fff; border:0 !important;}
 	.organ .chart ul .edu {padding-right:8px;}
 	.organ .chart ul .research {padding-left:8px;}
+	.organ .chart ul .part {padding:0.5em; border:1px solid #ca0464; background:#fff; font-size:16px; font-weight:400; line-height:1.5em;}
 	.organ .chart .sub {overflow:hidden; position:relative; padding-top:15px;}
 	.organ .chart .sub:before {position:absolute; top:0; left:50%; width:50%; height:1px; margin-left:-25%; background:#ccc; content:"";}
 	.organ .chart .sub small {font-size:0.8em;}
