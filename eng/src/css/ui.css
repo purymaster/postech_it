@@ -634,7 +634,8 @@ footer .info .sns li:nth-child(3) a {background-position-x:-55px;}
 
 /* 탭메뉴 */
 [data-tab-menu] {margin-bottom:50px;}
-[data-tab-menu] ul {overflow:hidden; background:#f9f7f5;}
+[data-tab-menu] ul {background:#f9f7f5;} 
+[data-tab-menu] ul:after {display:block; clear:both; content:"";}
 [data-tab-menu] ul li {float:left;}
 [data-tab-menu] ul.type2 li {width:50%;}
 [data-tab-menu] ul.type3 li {width:33.33%;}
@@ -1311,7 +1312,7 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 .greeting .cont_bottom .cont_text:before {position:absolute; top:-143px; left:2px; width:1px; height:103px; background-color:#d5d5d5; content:"";}
 .greeting .cont_bottom .cont_text:after {position:absolute; top:-143px; left:0; width:5px; height:5px; border-radius:50px; background-color:#d5d5d5; content:"";}
 .greeting .cont_bottom .cont_text .cont_tit {margin-bottom:25px; font-size:24px; font-weight:700; line-height:1.4em; color:#333;}
-.greeting .cont_bottom .cont_text .text {margin-bottom:20px; font-size:14px; line-height:1.7em; color:#555;}
+.greeting .cont_bottom .cont_text .text {margin-bottom:1.7em; font-size:14px; line-height:1.7em; color:#555;}
 .greeting .cont_bottom .cont_text .text:last-child {margin-bottom:0;}
 .greeting .sign_box {text-align:right;}
 .greeting .sign_box img {height:58px;}
