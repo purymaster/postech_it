@@ -339,7 +339,7 @@ footer .info .sns li:nth-child(3) a {background-position-x:-55px;}
 [data-modal]#res .modal {width:600px;}
 
 @media (max-width:599px) {
-	[data-modal] .modal {max-width:calc(100vw - 30px); max-height:calc(100vh - 30px); padding:15px;}
+	[data-modal] .modal {max-width:calc(100vw - 30px); max-height:calc(100vh - 60px); padding:15px;}
 	[data-modal] .modal_tit {font-size:18px;}
 	[data-modal] .modal_subtxt {padding:15px;}
 	[data-modal] .modal_subtxt p {font-size:12px; line-height:1.5em;}
@@ -1243,10 +1243,10 @@ textarea {width:100%; line-height:1.5em; padding:10px 15px;}
 [data-calendar-table] tr td:last-child .num {font-weight:500; color:#0066be;}
 [data-calendar-table] td .msg {position:relative; padding-left:10px; font-size:13px; line-height:1.3em;}
 [data-calendar-table] td .msg:before {position:absolute; top:4px; left:0; width:6px; height:6px; border-radius:50%; background:#bba078; content:"";}
-[data-calendar-table] .detail {visibility:hidden; overflow-y:auto; position:absolute; top:50%; left:0; z-index:9; width:210px; max-height:700px; padding:0 30px; border:1px solid #000; background:#fff; transition:all 0.3s; opacity:0; transform:translateY(-50%);}
+[data-calendar-table] .detail {visibility:hidden; overflow-y:auto; position:absolute; top:50%; left:100%; z-index:9; width:210px; max-height:700px; padding:0 30px; border:1px solid #000; background:#fff; transition:all 0.1s; opacity:0; transform:translateY(-50%);}
 [data-calendar-table] tr td:nth-child(n+5) .detail,
 [data-calendar-table] tr td:nth-child(n+6) .detail,
-[data-calendar-table] tr td:nth-child(n+7) .detail {left:auto; right:0;}
+[data-calendar-table] tr td:nth-child(n+7) .detail {left:auto; right:100%;}
 [data-calendar-table] td:hover .detail {visibility:visible; opacity:1;}
 [data-calendar-table] .rev_list li {padding:25px 0; border-bottom:1px solid #cdc9c6;}
 [data-calendar-table] .rev_list li:last-child {border:0;}
