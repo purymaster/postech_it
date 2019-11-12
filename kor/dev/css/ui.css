@@ -789,7 +789,7 @@ caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; lin
 	[data-profile] > ul > li.on:before {margin-top:10px;}
 	[data-profile] .info {padding:15px 0;}
 	/* [data-profile] .info img {width:74px; height:84px;} */
-	[data-profile] .info .profile {float:none; padding-left:165px;}
+	[data-profile] .info .profile {float:none; padding-left:190px;}
 	[data-profile] .info .profile .name {font-size:18px;}
 	[data-profile] .info .profile dl {padding-right:30px;}
 	[data-profile] .info .profile dt, 
